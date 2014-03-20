@@ -35,8 +35,8 @@ function doSubmit() {
 
 <body>
 <div class="container">
-	<div class="hero-unit" align="center">
-		<div align="center">发布新职位</div>
+	<div class="hero-unit">
+		修改职位信息
 		<form method="POST" action="../api/api_publish.php" class="form-horizontal" onsubmit="return doSubmit();">
 		<input type="hidden" name="_from" value="site">
 		<table border="0" align="center" cellspacing="4px" cellpadding="4px">

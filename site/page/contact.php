@@ -26,7 +26,7 @@ function showWxQr() {
   			<table class="table" width='100%'>
 				<tr><td width='25%'><b>邮件联系</b></td><td width='75%'><table border="0"><tr><td>工作时间请联系</td><td><a href="mailto:vicky.liu@topithunter.cn">vicky.liu@topithunter.cn</a></td></tr><tr><td>非工作时请联系</td><td><a href="mailto:vickyliu0329@gmail.com">vickyliu0329@gmail.com</a></td></table></td></tr>
 				<tr><td width='25%'><b>在线联系</b></td><td width='75%'><table border="0"><tr><td>QQ</td><td><a href="http://web.qq.com">2450191518</a></td></tr><tr><td>Hangouts</td><td><a href="http://www.google.com/hangouts/">vickyliu0329@gmail.com</a></td></tr><tr><td><span style="padding-top:16px;">微信</span></td><td><span style="padding-top:16px;">doudouandluoli</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn" value="二维码" onclick="showWxQr();"></td></tr></table></td></tr>
-				<tr><td width='25%'><b>电话联系</b></td><td width='75%'><table border="0"><tr><td>工作时间请联系</td><td><a href="tel:02160723350">021-60723350</a></td></tr></table></td></tr>
+				<tr><td width='25%'><b>电话联系</b></td><td width='75%'><table border="0"><tr><td>工作时间请联系</td><td><a href="tel:18521309424">18521309424</a></td></tr></table></td></tr>
 				<tr><td width='25%'><b>上门联系</b></td><td width='75%'>上海市浦东新区向城路58号东方国际科技大厦16楼<br><img src="../image/map.png" width="479px" height="311px"/></td></tr>
  			</table>
 		</div>
