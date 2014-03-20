@@ -15,7 +15,9 @@ include "navbar.php";
 <body>
 <div class="container">
 	<div class="hero-unit">
-
+		<div align="center">
+		还在努力开发中，过几天再来吧...
+		</div>
 	</div>
 </div>
 </body>
