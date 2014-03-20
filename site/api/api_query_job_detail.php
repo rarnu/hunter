@@ -10,7 +10,7 @@ $result = query($db, $sql);
 closeConnection($db);
 
 $str = "";
-while (list($id, $t_company_name, $t_company_desc, $t_company_heads, $t_work_area, $t_work_years, $t_education, $t_in_heads, $t_publish_date, $t_end_date, $t_salary_range, $t_job_title, $t_job_accountability, $t_job_requirement, $t_keywords, $t_emergency, $t_tags, $t_color, $t_status)=mysql_fetch_row($result)) {
+while (list($t_id, $t_company_name, $t_company_desc, $t_company_heads, $t_work_area, $t_work_years, $t_education, $t_in_heads, $t_publish_date, $t_end_date, $t_salary_range, $t_job_title, $t_job_accountability, $t_job_requirement, $t_keywords, $t_emergency, $t_tags, $t_color, $t_status)=mysql_fetch_row($result)) {
 	if ($from == "site") {
 		if ($t_company_desc == "" || $t_company_desc == "null" || empty($t_company_desc)) {
 			$t_company_desc = "暂无";
@@ -60,7 +60,7 @@ while (list($id, $t_company_name, $t_company_desc, $t_company_heads, $t_work_are
 		$str = $str."<tr><td width='25%' valign='top'><b>任职要求</b></td><td colspan='3'>$t_job_requirement</td></tr>";
 		$str = $str."</table>";
 	} else {
-		$str = "{\"id\":$id,\"company_name\":".json_encode($t_company_name).",\"company_desc\":".json_encode($t_company_desc).",\"company_heads\":$t_company_heads,\"work_area\":".json_encode($t_work_area).",\"work_years\":$t_work_years,\"education\":".json_encode($t_education).",\"in_heads\":$t_in_heads,\"publish_date\":".json_encode($t_publish_date).",\"end_date\":".json_encode($t_end_date).",\"salary_range\":".json_encode($t_salary_range).",\"job_title\":".json_encode($t_job_title).",\"job_accountability\":".json_encode($t_job_accountability).",\"job_requirement\":".json_encode($t_job_requirement).",\"keywords\":".json_encode($t_keywords).",\"emergency\":$t_emergency,\"tags\":".json_encode($t_tags).",\"color\":$t_color,\"status\":$t_status}";
+		$str = "{\"id\":$t_id,\"company_name\":".json_encode($t_company_name).",\"company_desc\":".json_encode($t_company_desc).",\"company_heads\":$t_company_heads,\"work_area\":".json_encode($t_work_area).",\"work_years\":$t_work_years,\"education\":".json_encode($t_education).",\"in_heads\":$t_in_heads,\"publish_date\":".json_encode($t_publish_date).",\"end_date\":".json_encode($t_end_date).",\"salary_range\":".json_encode($t_salary_range).",\"job_title\":".json_encode($t_job_title).",\"job_accountability\":".json_encode($t_job_accountability).",\"job_requirement\":".json_encode($t_job_requirement).",\"keywords\":".json_encode($t_keywords).",\"emergency\":$t_emergency,\"tags\":".json_encode($t_tags).",\"color\":$t_color,\"status\":$t_status}";
 	}	
 }
 

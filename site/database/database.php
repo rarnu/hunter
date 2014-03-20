@@ -1,7 +1,7 @@
 <?php
 
 function openConnection() {
-	$db = @mysql_connect("127.0.0.1:3306","root","root") or die("error");
+	$db = @mysql_connect("localhost","rarnu","rarnu") or die("error");
 	mysql_query("SET NAMES 'utf8'", $db);
 	mysql_select_db("rarnu", $db);
 	return $db;

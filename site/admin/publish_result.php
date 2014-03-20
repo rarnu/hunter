@@ -22,17 +22,26 @@ include('navbar.php');
 
 	<?php
 	$stat=$_GET["stat"];
+    $edit=$_GET["edit"];
 	if ($stat==0) {
-        	echo "<div class=\"alert alert-success\" align=\"center\">";
-		echo "发布职位成功";
+        echo "<div class=\"alert alert-success\" align=\"center\">";
+        if ($edit==1) {
+            echo "修改职位信息成功";
+        } else {
+		    echo "发布职位成功";
+        }
 	} else {
-        	echo "<div class=\"alert alert-warning\" align=\"center\">";
-		echo "发由职位失败";
+        echo "<div class=\"alert alert-warning\" align=\"center\">";
+		if ($edit==1) {
+            echo "修改职位信息失败";
+        } else {
+            echo "发由职位失败";
+        }
 	}
 	?>
 	</div>    
         <p>
-          <a class="btn btn-large btn-success" href="publish.php">返回</a>
+          <a class="btn btn-large btn-success" href="<?php if($edit==1) { echo "manage.php"; } else { echo "publish.php"; } ?>">返回</a>
         </p>
              
       </div>
