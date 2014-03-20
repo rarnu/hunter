@@ -53,19 +53,23 @@ include "../database/database.php";
 			getData(page + 1);
 		}
 	}
+    function new_publish() {
+        location.href="publish.php";
+    }
 </script>
 
 </head>
 
 <body>
 <div class="container">
+    <div class="panel panel-default"><input type="button" value="发布新职位" class="btn btn-primary" style="width:120px;" onclick="new_publish();"></div><br>
 	<div class="panel panel-default"><div class="panel-heading"><font size="3">当前发布中的职位</font></div>
 		<table class="table" name="_jobs" id="_jobs">
 		</table>
 	</div>
 
 	<div class="alert alert-warning" style="height:30px;">
-		<table border="0" align="right">
+		<table border="0" width="100%">
 			<tr><td align="right"><input type="button" value="上一页" class="btn btn-primary" name="btn_prev" id="btn_prev" onclick="prevPage();">&nbsp;&nbsp;&nbsp;&nbsp;<span name="_pages" id="_pages"></span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="下一页" class="btn btn-primary" name="btn_next" id="btn_next" onclick="nextPage();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
 		</table>
 	</div>

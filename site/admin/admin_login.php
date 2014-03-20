@@ -21,7 +21,7 @@ if ($find_user == 1) {
 	if ($is_admin == 1) {
 		unset($_SESSION["error"]);
 		$_SESSION["_user"] = $user_name;
-		header("Location: publish.php");
+		header("Location: manage.php");
 	} else {
 		unset($_SESSION["_user"]);
 		$_SESSION["error"] = "not_admin";

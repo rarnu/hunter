@@ -27,11 +27,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">内容发布</a>
+            <a class="brand" href="#">后台管理</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
-		<li><a href="publish.php">发布职位</a></li>
-		<li><a href="manage.php">职位管理</a></li>
+		        <li><a href="manage.php">职位管理</a></li>
                 <li><a href="count.php">数据统计</a></li>
                 <li><a href="data.php">修改资料</a></li>
             </div><!--/.nav-collapse -->

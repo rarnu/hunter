@@ -41,7 +41,7 @@ include('navbar.php');
 	?>
 	</div>    
         <p>
-          <a class="btn btn-large btn-success" href="<?php if($edit==1) { echo "manage.php"; } else { echo "publish.php"; } ?>">返回</a>
+          <a class="btn btn-large btn-success" href="manage.php">返回</a>
         </p>
              
       </div>
