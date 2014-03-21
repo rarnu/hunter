@@ -1,6 +1,10 @@
 <?php
 include "navbar.php";
 include "../database/database.php";
+session_start();
+if (!isset($_SESSION["_user_id"])) {
+	header("Location: login.php");
+}
 ?>
 <html>
 
@@ -24,6 +28,9 @@ include "../database/database.php";
 
 	function returnPage(data) {
 		pagecount = data;
+		if (page > pagecount) {
+			page = pagecount;
+		}
 	}
 
 	function getData(idx) {
@@ -35,13 +42,25 @@ include "../database/database.php";
 	}
 
 	function doEdit(id) {
-		location.href="edit.php?id="+id;
+		location.href="edit.php?_id="+id;
 	}
 	function doProp(id) {
-		alert("prop:"+id);
+		loadPropData(id);
+		$("#_prop_detail").modal("show");
+	}
+	function returnDelete(data) {
+		if (data.result == 0) {
+			getPageCount();
+			getData(page);
+		} else {
+			alert("删除数据失败");
+		}
 	}
 	function doDelete(id) {
-		alert("delete:"+id);
+		var ret = confirm("确定要删除这条职位信息吗？");
+		if (ret) {
+			$.getJSON("../api/api_delete_job.php?_id="+id, returnDelete);
+		}
 	}
 	function prevPage() {
 		if (page > 1) {
@@ -74,6 +93,11 @@ include "../database/database.php";
 		</table>
 	</div>
 </div>
+
+<?php
+include "popup_prop.php";
+?>
+
 <script type="text/javascript">
 	if (page == 0) {
 		getPageCount();

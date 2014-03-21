@@ -1,3 +1,7 @@
 create table hunter_job(id int primary key auto_increment, t_company_name text not null, t_company_desc text, t_company_heads int not null, t_work_area text not null, t_work_years int not null, t_education text, t_in_heads int default 0, t_publish_date text, t_end_date text, t_salary_range text, t_job_title text not null, t_job_accountability text, t_job_requirement text, t_keywords text, t_emergency int default 0, t_tags text, t_color int default 0, t_status int default 0) character set utf8;
+alter table hunter_job add column key2 text, add column key3 text, add column key4 text, add column key5 text;
 
 create table hunter_user(id int primary key auto_increment, t_user_name text not null, t_password text not null, t_is_admin int default 0) character set utf8;
+
+create table hunter_contact(id int primary key, t_mail_work text not null, t_mail_private text not null, t_qq text not null, t_wx text, t_hangouts text, t_phone_work text, t_phone_private text, t_address text not null) character set utf8;
+insert into hunter_contact values (0, 'vicky.liu@topithunter.cn','vickyliu0329@gmail.com','2450191518','doudouandluoli','vickyliu0329@gmail.com','','18521309424','上海市浦东新区向城路58号东方国际科技大厦16楼');

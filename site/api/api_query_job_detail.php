@@ -10,7 +10,7 @@ $result = query($db, $sql);
 closeConnection($db);
 
 $str = "";
-while (list($t_id, $t_company_name, $t_company_desc, $t_company_heads, $t_work_area, $t_work_years, $t_education, $t_in_heads, $t_publish_date, $t_end_date, $t_salary_range, $t_job_title, $t_job_accountability, $t_job_requirement, $t_keywords, $t_emergency, $t_tags, $t_color, $t_status)=mysql_fetch_row($result)) {
+while (list($t_id, $t_company_name, $t_company_desc, $t_company_heads, $t_work_area, $t_work_years, $t_education, $t_in_heads, $t_publish_date, $t_end_date, $t_salary_range, $t_job_title, $t_job_accountability, $t_job_requirement, $t_keywords, $t_emergency, $t_tags, $t_color, $t_status, $key2, $key3, $key4, $key5)=mysql_fetch_row($result)) {
 	if ($from == "site") {
 		if ($t_company_desc == "" || $t_company_desc == "null" || empty($t_company_desc)) {
 			$t_company_desc = "暂无";

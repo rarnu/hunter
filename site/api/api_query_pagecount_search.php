@@ -2,9 +2,10 @@
 include "../database/database.php";
 
 $from = $_GET["_from"];
+$keyword = $_GET["_keyword"];
 
 $db = openConnection();
-$sql = "select count(*) from hunter_job where t_status=0";
+$sql = "select count(*) from hunter_job where t_status=0 and ( t_company_name like '%$keyword%' or t_work_area like '%$keyword%' or t_job_title like '%$keyword%' or t_job_accountability like '%$keyword%' or t_job_requirement like '%$keyword%' or t_keywords like '%$keyword%' or key2 like '%$keyword%' or key3 like '%$keyword%' or key4 like '%$keyword%' or key5 like '%$keyword%')";
 $result = query($db, $sql);
 closeConnection($db);
 $count = 1;
