@@ -37,6 +37,7 @@ include "../database/database.php";
 		$.get("../api/api_query_pagecount_search.php?_from=site&_keyword="+key, returnPage);
 	}
 	function showDetail(id) {
+		$.get("../api/api_add_view_count.php?_id="+id);
 		loadDetailData(id);
 		$("#_job_detail").modal("toggle");
 	}

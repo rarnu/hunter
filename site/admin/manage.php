@@ -53,7 +53,8 @@ if (!isset($_SESSION["_user_id"])) {
 			getPageCount();
 			getData(page);
 		} else {
-			alert("删除数据失败");
+			$("#_msg_text")[0].innerHTML = "删除数据失败，请联系管理员";
+			$("#_alert_message").modal("toggle");
 		}
 	}
 	function doDelete(id) {
@@ -96,6 +97,7 @@ if (!isset($_SESSION["_user_id"])) {
 
 <?php
 include "popup_prop.php";
+include "alert_message.php";
 ?>
 
 <script type="text/javascript">

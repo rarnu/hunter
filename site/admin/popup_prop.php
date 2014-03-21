@@ -19,7 +19,8 @@
 		
 		$("#_prop_detail").modal("hide");
 		if (data.result == 1) {
-			$("#_alert_prop").modal("toggle");
+			$("#_msg_text")[0].innerHTML = "保存失败，请联系管理员";
+			$("#_alert_message").modal("toggle");
 		} else {
 			getData(page);
 		}
@@ -66,5 +67,5 @@
 	</div>
 </div>
 <?php
-include "alert_prop.php";
+include "alert_message.php";
 ?>

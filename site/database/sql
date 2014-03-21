@@ -1,5 +1,6 @@
 create table hunter_job(id int primary key auto_increment, t_company_name text not null, t_company_desc text, t_company_heads int not null, t_work_area text not null, t_work_years int not null, t_education text, t_in_heads int default 0, t_publish_date text, t_end_date text, t_salary_range text, t_job_title text not null, t_job_accountability text, t_job_requirement text, t_keywords text, t_emergency int default 0, t_tags text, t_color int default 0, t_status int default 0) character set utf8;
 alter table hunter_job add column key2 text, add column key3 text, add column key4 text, add column key5 text;
+alter table hunter_job add column t_view_count int default 0;
 
 create table hunter_user(id int primary key auto_increment, t_user_name text not null, t_password text not null, t_is_admin int default 0) character set utf8;
 

@@ -21,10 +21,12 @@ function checkPwd() {
 	var newRepeatPwd = $("#_repeat_new_pwd")[0].value;
 	var ret = true;
 	if (oldPwd == "" || newPwd == "" || newRepeatPwd == "") {
-		alert("密码不能为空");
+		$("#_msg_text")[0].innerHTML = "密码不能为空";
+		$("#_alert_message").modal("toggle");
 		ret = false;
 	} else if (newPwd != newRepeatPwd) {
-		alert("两次输入的密码不一致");
+		$("#_msg_text")[0].innerHTML = "两次输入的密码不一致";
+		$("#_alert_message").modal("toggle");
 		ret = false;
 	}
 	return ret;
@@ -70,6 +72,10 @@ function checkPwd() {
 		</form>
 	</div>
 </div>
+
+<?php
+include "alert_message.php";
+?>
 
 <script type="text/javascript">
 function returnJson(data) {

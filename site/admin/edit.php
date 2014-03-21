@@ -14,16 +14,20 @@ include "navbar.php";
 function doSubmit() {
 	var ret = true;
 	if (document.getElementById("_company_name").value == "") {
-		alert("公司名称（描述）不能为空");
+		$("#_msg_text")[0].innerHTML = "公司名称（描述）不能为空";
+		$("#_alert_message").modal("toggle");
 		ret = false;
 	} else if (document.getElementById("_work_area").value == "") {
-		alert("工作地区不能为空");
+		$("#_msg_text")[0].innerHTML = "工作地区不能为空";
+		$("#_alert_message").modal("toggle");
 		ret = false;
 	} else if (document.getElementById("_in_heads").value == "") {
-		alert("招聘人数不能为空");
+		$("#_msg_text")[0].innerHTML = "招聘人数不能为空";
+		$("#_alert_message").modal("toggle");
 		ret = false;
 	} else if (document.getElementById("_job_title").value == "") {
-		alert("职位名称不能为空");
+		$("#_msg_text")[0].innerHTML = "职位名称不能为空";
+		$("#_alert_message").modal("toggle");
 		ret = false;
 	}
 	return ret;
@@ -59,6 +63,11 @@ function doSubmit() {
 	</div>
 </div>
 <script src="../common/js/dateselect.js" ></script>
+
+<?php
+include "alert_message.php";
+?>
+
 <script type="text/javascript">
 var url = location.href;
 var params = url.substr(url.indexOf('?')+1).split('=');
