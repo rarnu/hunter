@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vicky</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_share">分享</string>
+
+    <string name="title_jobs">现有岗位</string>
+    <string name="title_search">职位搜索</string>
+    <string name="title_topview">大家都在看</string>
+    <string name="title_history">成功案例</string>
+    <string name="title_contact">与我联系</string>
+    <string name="title_settings">系统设置</string>
+    <string name="item_work_area_fmt" formatted="false">工作地点:%s</string>
+    <string name="item_company_fmt" formatted="false">公司描述:%s</string>
+    <string name="hint_input_keyword">输入要搜索的关键字</string>
+</resources>
