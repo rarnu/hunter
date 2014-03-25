@@ -49,4 +49,16 @@ public class MobileApi {
         }
         return list;
     }
+
+    public static JobDetailClass queryJobDetail(int _id) {
+        String ret = HttpRequest.get(BASE_URL + "api_query_job_detail.php", String.format("_from=mobile&_id=%d", _id), HTTP.UTF_8);
+        JobDetailClass jdc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            jdc = JobDetailClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return jdc;
+    }
 }

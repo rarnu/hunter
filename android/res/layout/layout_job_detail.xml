@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+            android:id="@+id/svDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dip">
+
+            <TextView
+                    android:id="@+id/tvCompanyName"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_company_name"
+                    android:gravity="left|center"/>
+
+            <TextView
+                    android:id="@+id/vCompanyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvCompanyName"/>
+
+            <TextView
+                    android:id="@+id/tvCompanyDesc"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_company_desc"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vCompanyName"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vCompanyDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvCompanyDesc"
+                    android:layout_below="@+id/vCompanyName"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/tvCompanyHeads"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_company_heads"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vCompanyDesc"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vCompanyHeads"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvCompanyHeads"
+                    android:layout_below="@+id/vCompanyDesc"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvInHeads"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_in_heads"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vCompanyHeads"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vInHeads"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvInHeads"
+                    android:layout_below="@+id/vCompanyHeads"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvWorkArea"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_work_area"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vInHeads"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vWorkArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvWorkArea"
+                    android:layout_below="@+id/vInHeads"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvWorkYears"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_work_years"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vWorkArea"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vWorkYears"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvWorkYears"
+                    android:layout_below="@+id/vWorkArea"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvEducation"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_education"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vWorkYears"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvEducation"
+                    android:layout_below="@+id/vWorkYears"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvSalaryRange"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_salary_range"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vEducation"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vSalaryRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvSalaryRange"
+                    android:layout_below="@+id/vEducation"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvPublishDate"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_publish_date"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vSalaryRange"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vPublishDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvPublishDate"
+                    android:layout_below="@+id/vSalaryRange"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvEndDate"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_end_date"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vPublishDate"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vEndDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvEndDate"
+                    android:layout_below="@+id/vPublishDate"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvJobTitle"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_job_title"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vEndDate"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vJobTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvJobTitle"
+                    android:layout_below="@+id/vEndDate"
+                    android:layout_marginTop="12dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:id="@+id/tvJobAccountability"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_job_accountability"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vJobTitle"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vJobAccountability"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvJobAccountability"
+                    android:layout_below="@+id/vJobTitle"
+                    android:layout_marginTop="12dip"
+                    />
+
+            <TextView
+                    android:id="@+id/tvJobRequirement"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_job_requirement"
+                    android:gravity="left|center"
+                    android:layout_below="@+id/vJobAccountability"
+                    android:layout_marginTop="12dip"/>
+
+            <TextView
+                    android:id="@+id/vJobRequirement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_toRightOf="@+id/tvJobRequirement"
+                    android:layout_below="@+id/vJobAccountability"
+                    android:layout_marginTop="12dip"
+                    />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+            android:id="@+id/tvNoConnection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/hint_no_connection"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+    <RelativeLayout
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pb"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="48dip"
+                  android:text="@string/list_loading"
+                  android:gravity="center"
+                  android:layout_marginLeft="8dip"
+                  android:layout_toRightOf="@+id/pb"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -33,7 +33,7 @@
 		<li><a href="jobs.php">现有岗位</a></li>
 		<li><a href="search.php">职位搜索</a></li>
                 <li><a href="topview.php">大家都在看</a></li>
-                <LI><A HREF="history.php">成功案例</a></li>
+                <li><A HREF="history.php">我要成功</a></li>
                 <li><a href="contact.php">与我联系</a></li>
             </div><!--/.nav-collapse -->
         </div>

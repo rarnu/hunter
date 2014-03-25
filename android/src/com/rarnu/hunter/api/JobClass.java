@@ -2,7 +2,9 @@ package com.rarnu.hunter.api;
 
 import org.json.JSONObject;
 
-public class JobClass {
+import java.io.Serializable;
+
+public class JobClass implements Serializable {
     public int id;
     public String jobTitle;
     public String workArea;

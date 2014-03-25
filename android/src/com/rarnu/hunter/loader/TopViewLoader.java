@@ -19,6 +19,10 @@ public class TopViewLoader extends BaseLoader<JobClass> {
         this._page = page;
     }
 
+    public int getPage() {
+        return _page;
+    }
+
     @Override
     public List<JobClass> loadInBackground() {
         return MobileApi.queryJobTop(_page);

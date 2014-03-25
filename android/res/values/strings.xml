@@ -10,7 +10,24 @@
     <string name="title_history">成功案例</string>
     <string name="title_contact">与我联系</string>
     <string name="title_settings">系统设置</string>
+    <string name="title_job_detail">职位详情</string>
     <string name="item_work_area_fmt" formatted="false">工作地点:%s</string>
     <string name="item_company_fmt" formatted="false">公司描述:%s</string>
     <string name="hint_input_keyword">输入要搜索的关键字</string>
+    <string name="hint_no_connection">没有数据或网络不稳定\n请点击重试...</string>
+    <string name="toast_no_more_jobs">没有更多的内容了</string>
+
+    <string name="detail_company_name">公司名称</string>
+    <string name="detail_company_desc">公司简介</string>
+    <string name="detail_company_heads">公司规模</string>
+    <string name="detail_in_heads">招聘人数</string>
+    <string name="detail_work_area">工作地区</string>
+    <string name="detail_work_years">工作年限</string>
+    <string name="detail_education">学历要求</string>
+    <string name="detail_salary_range">薪资范围</string>
+    <string name="detail_publish_date">发布日期</string>
+    <string name="detail_end_date">结束日期</string>
+    <string name="detail_job_title">职位名称</string>
+    <string name="detail_job_accountability">岗位职责</string>
+    <string name="detail_job_requirement">任职要求</string>
 </resources>
