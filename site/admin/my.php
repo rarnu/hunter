@@ -1,6 +1,10 @@
 <?php
 include "navbar.php";
 include "../database/database.php";
+session_start();
+if (!isset($_SESSION["_user_id"])) {
+	header("Location: login.php");
+}
 ?>
 <html>
 
@@ -16,7 +20,7 @@ include "../database/database.php";
 	var page = 0;
 
 	function returnData(data) {
-		$("#_timeline")[0].innerHTML = data;
+		$("#_timeline")[0].innerHTML = "<tr><td><b>#</b></td><td><b>发布日期</b></td><td><b>摘要</b></td><td> </td></tr>"+data;
 		$("#_pages")[0].innerHTML = page+"/"+pagecount;
 		$("#btn_prev")[0].disabled = (page <= 1);
 		$("#btn_next")[0].disabled = (page >= pagecount);
@@ -76,10 +80,13 @@ include "../database/database.php";
 <div class="container">
     <div class="panel panel-default">
 	<form method="POST" action="../api/api_edit_anno.php" class="form-horizontal">
-	Vicky 的个人简介<br>
-	<div class="alert" id="_comment" name="_comment"></div>
+	我的个人简介<br>
+	<input type="hidden" id="_from" name="_from" value="site">
+	<textarea id="_comment" name="_comment" rows="10" style="width:100%"></textarea>
+	<table border="0" width="100%"><tr><td align="right"><input type="submit" value="提交修改" class="btn btn-primary"></td></tr></table>
 	</form>
 <hr>
+<div class="panel panel-default"><input type="button" value="发布新的时间线" class="btn btn-primary" style="width:120px;" onclick="new_publish();"></div><br>
 	<div class="panel panel-default"><div class="panel-heading"><font size="3">已发布的时间线</font></div>
 		<table class="table" name="_timeline" id="_timeline">
 		</table>
@@ -103,9 +110,9 @@ include "alert_message.php";
 		getData(1);
 	}
 	function returnAnno(data) {
-		$("#_comment")[0].innerHTML = data.comment;
+		$("#_comment")[0].value = data.comment;
 	}
-	$.getJSON("../api/api_query_anno.php?_from=site", returnAnno);
+	$.getJSON("../api/api_query_anno.php", returnAnno);
 </script>
 
 </body>

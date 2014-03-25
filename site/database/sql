@@ -6,3 +6,9 @@ create table hunter_user(id int primary key auto_increment, t_user_name text not
 
 create table hunter_contact(id int primary key, t_mail_work text not null, t_mail_private text not null, t_qq text not null, t_wx text, t_hangouts text, t_phone_work text, t_phone_private text, t_address text not null) character set utf8;
 insert into hunter_contact values (0, 'vicky.liu@topithunter.cn','vickyliu0329@gmail.com','2450191518','doudouandluoli','vickyliu0329@gmail.com','','18521309424','上海市浦东新区向城路58号东方国际科技大厦16楼');
+
+create table hunter_anno (id int primary key, t_comment text) character set utf8;
+insert into hunter_anno values (0, '在此填写个人简介的内容');
+
+create table hunter_timeline (id int primary key auto_increment, t_publish_date text, t_comment text) character set utf8;
+
