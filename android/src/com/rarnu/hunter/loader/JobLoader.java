@@ -7,9 +7,6 @@ import com.rarnu.hunter.api.MobileApi;
 
 import java.util.List;
 
-/**
- * Created by rarnu on 3/23/14.
- */
 public class JobLoader extends BaseLoader<JobClass> {
 
     private int _page = 1;

@@ -53,11 +53,15 @@ if (!isset($_SESSION["_user_id"])) {
 			$("#_alert_message").modal("toggle");
 		}
 	}
+
+	function deleteCallback(id) {
+		$.getJSON("../api/api_delete_timeline.php?_id="+id, returnDelete);
+	}
 	function doDelete(id) {
-		var ret = confirm("确定要删除这条时间线吗？");
-		if (ret) {
-			$.getJSON("../api/api_delete_timeline.php?_id="+id, returnDelete);
-		}
+		setInnerId(id);
+		callbackFunction = deleteCallback;
+		$("#_msg_confirm")[0].innerHTML = "确定要删除这条时间线吗？";
+		$("#_alert_confirm").modal("toggle");
 	}
 	function prevPage() {
 		if (page > 1) {
@@ -102,6 +106,7 @@ if (!isset($_SESSION["_user_id"])) {
 <?php
 include "popup_prop.php";
 include "alert_message.php";
+include "alert_confirm.php";
 ?>
 
 <script type="text/javascript">

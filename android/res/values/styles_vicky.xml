@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.Vicky" parent="@android:style/Theme.Holo.Light">
+    <style name="Theme.Vicky" parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_vicky</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Vicky</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Vicky</item>
@@ -30,44 +30,46 @@
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_vicky</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Vicky</item>
         
-        
+                <!-- Light.DarkActionBar specific -->
+        <item name="android:actionBarWidgetTheme">@style/Theme.Vicky.Widget</item>
+
     </style>
 
-    <style name="ActionBar.Solid.Vicky" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
-        <item name="android:background">@drawable/ab_background_textured_vicky</item>
+    <style name="ActionBar.Solid.Vicky" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ab_solid_vicky</item>
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_vicky</item>
-        <item name="android:backgroundSplit">@drawable/ab_background_textured_vicky</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_vicky</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Vicky</item>
     </style>
 
-    <style name="ActionBar.Transparent.Vicky" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <style name="ActionBar.Transparent.Vicky" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">@drawable/ab_transparent_vicky</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Vicky</item>
     </style>
 
-    <style name="PopupMenu.Vicky" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+    <style name="PopupMenu.Vicky" parent="@android:style/Widget.Holo.ListPopupWindow">
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_vicky</item>	
     </style>
 
-    <style name="DropDownListView.Vicky" parent="@android:style/Widget.Holo.Light.ListView.DropDown">
+    <style name="DropDownListView.Vicky" parent="@android:style/Widget.Holo.ListView.DropDown">
         <item name="android:listSelector">@drawable/selectable_background_vicky</item>
     </style>
 
-    <style name="ActionBarTabStyle.Vicky" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+    <style name="ActionBarTabStyle.Vicky" parent="@android:style/Widget.Holo.ActionBar.TabView">
         <item name="android:background">@drawable/tab_indicator_ab_vicky</item>
     </style>
 
-    <style name="DropDownNav.Vicky" parent="@android:style/Widget.Holo.Light.Spinner">
+    <style name="DropDownNav.Vicky" parent="@android:style/Widget.Holo.Spinner">
         <item name="android:background">@drawable/spinner_background_ab_vicky</item>
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_vicky</item>
         <item name="android:dropDownSelector">@drawable/selectable_background_vicky</item>
     </style>
     
-    <style name="ProgressBar.Vicky" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">
+    <style name="ProgressBar.Vicky" parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal_vicky</item>
     </style>
     
-    <style name="ActionButton.CloseMode.Vicky" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">
+    <style name="ActionButton.CloseMode.Vicky" parent="@android:style/Widget.Holo.ActionButton.CloseMode">
         <item name="android:background">@drawable/btn_cab_done_vicky</item>
     </style>
 

@@ -1,12 +1,40 @@
 package com.rarnu.hunter.fragment;
 
+import android.content.Loader;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import com.rarnu.devlib.base.BaseFragment;
 import com.rarnu.hunter.R;
+import com.rarnu.hunter.api.DataClass;
+import com.rarnu.hunter.api.MobileApi;
+import com.rarnu.hunter.loader.DataLoader;
+import com.rarnu.utils.DownloadUtils;
 import com.rarnu.utils.ResourceUtils;
+import com.rarnu.utils.UIUtils;
 
-public class ContactFragment extends BaseFragment {
+public class ContactFragment extends BaseFragment implements Loader.OnLoadCompleteListener<DataClass>, View.OnClickListener {
+
+    ScrollView svContact;
+    TextView tvNoConnection;
+    RelativeLayout pbLoading;
+
+    TextView vMailWork;
+    TextView vMailPrivate;
+    TextView vQQ;
+    TextView vHangouts;
+    TextView vWX;
+    TextView vPhoneWork;
+    TextView vPhonePrivate;
+    TextView vAddress;
+    ImageView ivMap;
+
+    DataLoader loader;
 
     public ContactFragment() {
         super();
@@ -31,16 +59,38 @@ public class ContactFragment extends BaseFragment {
     @Override
     public void initComponents() {
 
+        vMailWork = (TextView) innerView.findViewById(R.id.vMailWork);
+        vMailPrivate = (TextView) innerView.findViewById(R.id.vMailPrivate);
+        vQQ = (TextView) innerView.findViewById(R.id.vQQ);
+        vHangouts = (TextView) innerView.findViewById(R.id.vHangouts);
+        vWX = (TextView) innerView.findViewById(R.id.vWX);
+        vPhoneWork = (TextView) innerView.findViewById(R.id.vPhoneWork);
+        vPhonePrivate = (TextView) innerView.findViewById(R.id.vPhonePrivate);
+        vAddress = (TextView) innerView.findViewById(R.id.vAddress);
+        ivMap = (ImageView) innerView.findViewById(R.id.ivMap);
+
+        tvNoConnection = (TextView) innerView.findViewById(R.id.tvNoConnection);
+        svContact = (ScrollView) innerView.findViewById(R.id.svContact);
+        pbLoading = (RelativeLayout) innerView.findViewById(R.id.pbLoading);
+        loader = new DataLoader(getActivity());
     }
 
     @Override
     public void initEvents() {
-
+        loader.registerListener(0, this);
+        tvNoConnection.setOnClickListener(this);
     }
 
     @Override
     public void initLogic() {
+        doLoading();
+    }
 
+    private void doLoading() {
+        svContact.setVisibility(View.GONE);
+        tvNoConnection.setVisibility(View.GONE);
+        pbLoading.setVisibility(View.VISIBLE);
+        loader.startLoading();
     }
 
     @Override
@@ -66,5 +116,51 @@ public class ContactFragment extends BaseFragment {
     @Override
     public Bundle getFragmentState() {
         return null;
+    }
+
+    @Override
+    public void onLoadComplete(Loader<DataClass> loader, DataClass data) {
+        if (getActivity() != null) {
+            pbLoading.setVisibility(View.GONE);
+            if (data != null) {
+
+                vMailWork.setText(data.mailWork);
+                vMailPrivate.setText(data.mailPrivate);
+                vQQ.setText(data.qq);
+                vHangouts.setText(data.hangouts);
+                vWX.setText(data.wx);
+                vPhoneWork.setText(data.phoneWork);
+                vPhonePrivate.setText(data.phonePrivate);
+                vAddress.setText(data.address);
+
+                svContact.setVisibility(View.VISIBLE);
+                loadMapT();
+            } else {
+                tvNoConnection.setVisibility(View.VISIBLE);
+                svContact.setVisibility(View.GONE);
+
+            }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tvNoConnection:
+                doLoading();
+                break;
+        }
+    }
+
+    private void loadMapT() {
+        int width = UIUtils.getWidth() - UIUtils.dipToPx(24);
+        int height = (int) (width * 1.0D * 311 / 497);
+        RelativeLayout.LayoutParams rllp = (RelativeLayout.LayoutParams) ivMap.getLayoutParams();
+        rllp.width = width;
+        rllp.height = height;
+        ivMap.setLayoutParams(rllp);
+        String localDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/.vicky/";
+        DownloadUtils.downloadFileT(getActivity(), ivMap, MobileApi.MAP_URL, localDir, "map.png", null);
+
     }
 }

@@ -14,6 +14,7 @@ import com.rarnu.hunter.R;
 import com.rarnu.hunter.adapter.JobAdapter;
 import com.rarnu.hunter.api.JobClass;
 import com.rarnu.hunter.loader.SearchLoader;
+import com.rarnu.utils.InputMethodUtils;
 import com.rarnu.utils.ResourceUtils;
 
 import java.util.ArrayList;
@@ -169,6 +170,7 @@ public class SearchFragment extends BaseFragment implements OnPullDownListener, 
                 doLoading();
                 break;
             case R.id.btnSearch:
+                InputMethodUtils.hideInputMethod(getActivity());
                 String key = etKeyword.getText().toString();
                 if (loader != null && !key.equals("")) {
                     currentPage = 1;

@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen>
-
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/cat_admin">
+        <Preference
+                android:key="@string/id_admin"
+                android:title="@string/pref_admin_enable"/>
+        <Preference
+                android:key="@string/id_manage"
+                android:title="@string/pref_manage"
+                />
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="@string/cat_software">
+        <Preference
+                android:key="@string/id_check_update"
+                android:title="@string/pref_check_update"/>
+        <Preference
+                android:key="@string/id_feedback"
+                android:title="@string/pref_feedback"/>
+        <Preference
+                android:key="@string/id_about"
+                android:title="@string/pref_about"/>
+    </PreferenceCategory>
 </PreferenceScreen>

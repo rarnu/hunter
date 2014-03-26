@@ -57,12 +57,17 @@ if (!isset($_SESSION["_user_id"])) {
 			$("#_alert_message").modal("toggle");
 		}
 	}
-	function doDelete(id) {
-		var ret = confirm("确定要删除这条职位信息吗？");
-		if (ret) {
-			$.getJSON("../api/api_delete_job.php?_id="+id, returnDelete);
-		}
-	}
+
+	function deleteCallback(id) {
+                $.getJSON("../api/api_delete_job.php?_id="+id, returnDelete);
+        }
+        function doDelete(id) {
+                setInnerId(id);
+                callbackFunction = deleteCallback;
+                $("#_msg_confirm")[0].innerHTML = "确定要删除这条职位信息吗？";
+                $("#_alert_confirm").modal("toggle");
+        }
+
 	function prevPage() {
 		if (page > 1) {
 			getData(page - 1);
@@ -98,6 +103,7 @@ if (!isset($_SESSION["_user_id"])) {
 <?php
 include "popup_prop.php";
 include "alert_message.php";
+include "alert_confirm.php";
 ?>
 
 <script type="text/javascript">

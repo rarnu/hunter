@@ -18,6 +18,7 @@ if ($from == "mobile") {
 }
 while (list($id, $pd, $c)=mysql_fetch_row($result)) {
 	if ($from == "site") {
+		$c = substr($c,0,20)."...";
 		$str = $str."<tr><td>$id</td><td>$pd</td><td>$c</td><td><input type='button' value='修改' onclick='doEdit($id);' class='btn btn-primary'>&nbsp;&nbsp;<input type='button' value='删除' onclick='doDelete($id);' class='btn btn-primary'></td></tr>";
 	} else {
 		$str = $str."{\"id\":$id,\"publish_date\":".json_encode($pd).",\"comment\":".json_encode($c)."},";

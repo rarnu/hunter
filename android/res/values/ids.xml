@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="id_admin">id_admin</string>
+    <string name="id_check_update">id_check_update</string>
+    <string name="id_feedback">id_feedback</string>
+    <string name="id_about">id_about</string>
+    <string name="id_manage">id_manage</string>
+</resources>

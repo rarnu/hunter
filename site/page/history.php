@@ -31,30 +31,12 @@ include "../database/database.php";
 
 	function getData(idx) {
 		page = idx;
-		$.get("../api/api_query_manage_timeline.php?_from=site&_page="+page, returnData);
+		$.get("../api/api_query_timeline.php?_from=site&_page="+page, returnData);
 	}
 	function getPageCount() {
 		$.get("../api/api_query_pagecount_timeline.php?_from=site", returnPage);
 	}
 
-	function doEdit(id) {
-		location.href="edit_timeline.php?_id="+id;
-	}
-	function returnDelete(data) {
-		if (data.result == 0) {
-			getPageCount();
-			getData(page);
-		} else {
-			$("#_msg_text")[0].innerHTML = "删除数据失败，请联系管理员";
-			$("#_alert_message").modal("toggle");
-		}
-	}
-	function doDelete(id) {
-		var ret = confirm("确定要删除这条时间线吗？");
-		if (ret) {
-			$.getJSON("../api/api_delete_timeline.php?_id="+id, returnDelete);
-		}
-	}
 	function prevPage() {
 		if (page > 1) {
 			getData(page - 1);
@@ -65,9 +47,6 @@ include "../database/database.php";
 			getData(page + 1);
 		}
 	}
-    function new_publish() {
-        location.href="publish_timeline.php";
-    }
 </script>
 
 </head>

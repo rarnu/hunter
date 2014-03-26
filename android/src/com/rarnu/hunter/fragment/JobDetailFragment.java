@@ -3,6 +3,7 @@ package com.rarnu.hunter.fragment;
 import android.content.Loader;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -11,6 +12,7 @@ import com.rarnu.devlib.base.BaseFragment;
 import com.rarnu.hunter.R;
 import com.rarnu.hunter.api.JobClass;
 import com.rarnu.hunter.api.JobDetailClass;
+import com.rarnu.hunter.common.Ids;
 import com.rarnu.hunter.loader.JobDetailLoader;
 
 public class JobDetailFragment extends BaseFragment implements Loader.OnLoadCompleteListener<JobDetailClass>, View.OnClickListener {
@@ -37,6 +39,8 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
     RelativeLayout pbLoading;
 
     JobClass job = null;
+
+    MenuItem miShare;
 
     @Override
     public int getBarTitle() {
@@ -108,7 +112,19 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
 
     @Override
     public void initMenu(Menu menu) {
+        miShare = menu.add(0, Ids.MENU_ID_SHARE, 99, R.string.menu_share);
+        miShare.setIcon(android.R.drawable.ic_menu_share);
+        miShare.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case Ids.MENU_ID_SHARE:
+                // TODO: share job
+                break;
+        }
+        return true;
     }
 
     @Override

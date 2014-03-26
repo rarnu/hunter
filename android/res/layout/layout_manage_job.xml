@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.rarnu.devlib.component.PullDownListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    <TextView
+            android:id="@+id/tvNoConnection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/hint_no_connection"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+    <RelativeLayout
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pb"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="48dip"
+                  android:text="@string/list_loading"
+                  android:gravity="center"
+                  android:layout_marginLeft="8dip"
+                  android:layout_toRightOf="@+id/pb"/>
+    </RelativeLayout>
+
+</RelativeLayout>

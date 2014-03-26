@@ -7,10 +7,15 @@
     <string name="title_jobs">现有岗位</string>
     <string name="title_search">职位搜索</string>
     <string name="title_topview">大家都在看</string>
-    <string name="title_history">成功案例</string>
+    <string name="title_history">我要成功</string>
     <string name="title_contact">与我联系</string>
     <string name="title_settings">系统设置</string>
     <string name="title_job_detail">职位详情</string>
+    <string name="title_manage">后台管理</string>
+    <string name="title_manage_job">职位管理</string>
+    <string name="title_manage_my">我的专栏</string>
+    <string name="title_manage_count">数据统计</string>
+    <string name="title_manage_data">修改资料</string>
     <string name="item_work_area_fmt" formatted="false">工作地点:%s</string>
     <string name="item_company_fmt" formatted="false">公司描述:%s</string>
     <string name="hint_input_keyword">输入要搜索的关键字</string>
@@ -30,4 +35,34 @@
     <string name="detail_job_title">职位名称</string>
     <string name="detail_job_accountability">岗位职责</string>
     <string name="detail_job_requirement">任职要求</string>
+
+    <string name="history_head_vicky">Vicky 的个人简介</string>
+    <string name="contact_mail">邮件联系</string>
+    <string name="contact_mail_work">工作时间请联系</string>
+    <string name="contact_mail_private">非工作时请联系</string>
+    <string name="contact_phone">电话联系</string>
+    <string name="contact_phone_work">工作时间请联系</string>
+    <string name="contact_phone_private">非工作时请联系</string>
+    <string name="contact_online">在线联系</string>
+    <string name="contact_qq">QQ</string>
+    <string name="contact_hangouts">Hangouts</string>
+    <string name="contact_wx">微信</string>
+    <string name="contact_office">上门联系</string>
+
+    <string name="cat_admin">管理员</string>
+    <string name="cat_software">系统</string>
+    <string name="pref_admin_enable">登录到管理员身份</string>
+    <string name="pref_check_update">检查更新</string>
+    <string name="pref_feedback">建议反馈</string>
+    <string name="pref_about">关于本软件</string>
+    <string name="pref_manage">进入管理员页面</string>
+
+    <string name="pref_summary_not_admin">未登录管理员帐号</string>
+    <string name="pref_summary_admin" formatted="false">您是管理员 :%s</string>
+    <string name="dialog_account">用户名</string>
+    <string name="dialog_password">密码</string>
+    <string name="hint">提示</string>
+    <string name="confirm_logout">确实要登出当前管理员帐号吗？</string>
+    <string name="msg_account_empty">用户名和密码均不能为空</string>
+    <string name="msg_login_error">登录失败，请检查用户名和密码</string>
 </resources>
