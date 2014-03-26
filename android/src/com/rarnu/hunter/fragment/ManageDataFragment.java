@@ -2,11 +2,15 @@ package com.rarnu.hunter.fragment;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import com.rarnu.devlib.base.BaseFragment;
 import com.rarnu.hunter.R;
+import com.rarnu.hunter.common.Ids;
 import com.rarnu.utils.ResourceUtils;
 
 public class ManageDataFragment extends BaseFragment {
+
+    MenuItem miSave;
 
     public ManageDataFragment() {
         super();
@@ -55,7 +59,19 @@ public class ManageDataFragment extends BaseFragment {
 
     @Override
     public void initMenu(Menu menu) {
+        miSave = menu.add(0, Ids.MENU_ID_SAVE, 99, R.string.submit);
+        miSave.setIcon(android.R.drawable.ic_menu_save);
+        miSave.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case Ids.MENU_ID_SAVE:
+                // TODO: save data
+                break;
+        }
+        return true;
     }
 
     @Override

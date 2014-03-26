@@ -32,15 +32,17 @@
                         android:id="@+id/tvMailWork"
                         android:layout_width="120dip"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:text="@string/contact_mail_work"
                         android:padding="4dip"
 
                         />
 
-                <TextView
+                <EditText
                         android:id="@+id/vMailWork"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         android:layout_toRightOf="@+id/tvMailWork"
                         android:singleLine="true"
@@ -50,16 +52,18 @@
                 <TextView
                         android:id="@+id/tvMailPrivate"
                         android:layout_width="120dip"
+                        android:minHeight="48dip"
                         android:layout_height="wrap_content"
                         android:text="@string/contact_mail_private"
                         android:padding="4dip"
                         android:layout_below="@+id/tvMailWork"
                         />
 
-                <TextView
+                <EditText
                         android:id="@+id/vMailPrivate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         android:layout_below="@+id/tvMailWork"
                         android:layout_toRightOf="@+id/tvMailPrivate"
@@ -90,15 +94,16 @@
                         android:id="@+id/tvQQ"
                         android:layout_width="120dip"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:text="@string/contact_qq"
                         android:padding="4dip"
-
                         />
 
-                <TextView
+                <EditText
                         android:id="@+id/vQQ"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         android:layout_toRightOf="@+id/tvQQ"
                         android:singleLine="true"
@@ -109,15 +114,17 @@
                         android:id="@+id/tvHangouts"
                         android:layout_width="120dip"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:text="@string/contact_hangouts"
                         android:padding="4dip"
                         android:layout_below="@+id/tvQQ"
                         />
 
-                <TextView
+                <EditText
                         android:id="@+id/vHangouts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         android:layout_below="@+id/tvQQ"
                         android:layout_toRightOf="@+id/tvHangouts"
@@ -128,16 +135,18 @@
                 <TextView
                         android:id="@+id/tvWX"
                         android:layout_width="120dip"
+                        android:minHeight="48dip"
                         android:layout_height="wrap_content"
                         android:text="@string/contact_wx"
                         android:padding="4dip"
                         android:layout_below="@+id/tvHangouts"
                         />
 
-                <TextView
+                <EditText
                         android:id="@+id/vWX"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         android:layout_below="@+id/tvHangouts"
                         android:layout_toRightOf="@+id/tvWX"
@@ -168,15 +177,17 @@
                         android:id="@+id/tvPhoneWork"
                         android:layout_width="120dip"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:text="@string/contact_phone_work"
                         android:padding="4dip"
 
                         />
 
-                <TextView
+                <EditText
                         android:id="@+id/vPhoneWork"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         android:layout_toRightOf="@+id/tvPhoneWork"
                         android:singleLine="true"
@@ -187,15 +198,17 @@
                         android:id="@+id/tvPhonePrivate"
                         android:layout_width="120dip"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:text="@string/contact_phone_private"
                         android:padding="4dip"
                         android:layout_below="@+id/tvPhoneWork"
                         />
 
-                <TextView
+                <EditText
                         android:id="@+id/vPhonePrivate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         android:layout_below="@+id/tvPhoneWork"
                         android:layout_toRightOf="@+id/tvPhonePrivate"
@@ -222,20 +235,13 @@
                     android:background="@color/lightyellow"
                     android:layout_below="@+id/tvHeadOffice">
 
-                <TextView
+                <EditText
                         android:id="@+id/vAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="48dip"
                         android:padding="4dip"
                         />
-
-                <ImageView
-                        android:id="@+id/ivMap"
-                        android:layout_width="match_parent"
-                        android:layout_height="300dip"
-                        android:contentDescription="@null"
-                        android:scaleType="fitXY"
-                        android:layout_below="@+id/vAddress"/>
 
             </RelativeLayout>
 

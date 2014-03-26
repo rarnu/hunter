@@ -3,6 +3,8 @@
     <string name="app_name">Vicky</string>
     <string name="menu_settings">设置</string>
     <string name="menu_share">分享</string>
+    <string name="menu_add_job">新增职位</string>
+    <string name="menu_add_timeline">新增时间线</string>
 
     <string name="title_jobs">现有岗位</string>
     <string name="title_search">职位搜索</string>
@@ -37,6 +39,7 @@
     <string name="detail_job_requirement">任职要求</string>
 
     <string name="history_head_vicky">Vicky 的个人简介</string>
+    <string name="history_head_vicky_manage">我的个人简介</string>
     <string name="contact_mail">邮件联系</string>
     <string name="contact_mail_work">工作时间请联系</string>
     <string name="contact_mail_private">非工作时请联系</string>
@@ -62,7 +65,13 @@
     <string name="dialog_account">用户名</string>
     <string name="dialog_password">密码</string>
     <string name="hint">提示</string>
+    <string name="submit">提交</string>
     <string name="confirm_logout">确实要登出当前管理员帐号吗？</string>
     <string name="msg_account_empty">用户名和密码均不能为空</string>
     <string name="msg_login_error">登录失败，请检查用户名和密码</string>
+
+    <string name="popup_job_edit">修改</string>
+    <string name="popup_job_prop">属性</string>
+    <string name="popup_job_delete">删除</string>
+
 </resources>

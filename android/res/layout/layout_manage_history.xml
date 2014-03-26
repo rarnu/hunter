@@ -9,25 +9,33 @@
             android:id="@+id/tvHeadVicky"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/history_head_vicky"
+            android:text="@string/history_head_vicky_manage"
             android:paddingTop="4dip"
             android:paddingLeft="8dip"
             android:paddingRight="8dip"/>
-    <TextView
+    <EditText
             android:id="@+id/vHeadVicky"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dip"
             android:layout_marginRight="12dip"
-            android:background="@color/lightyellow"
             android:layout_below="@+id/tvHeadVicky"/>
+
+    <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="120dip"
+            android:layout_height="48dip"
+            android:layout_below="@+id/vHeadVicky"
+            android:layout_alignParentRight="true"
+            android:text="@string/submit"
+            android:layout_marginRight="8dip"/>
 
     <TextView
             android:id="@+id/line"
             android:layout_width="match_parent"
             android:layout_height="1dip"
             android:background="@color/gray"
-            android:layout_below="@+id/vHeadVicky"
+            android:layout_below="@+id/btnSubmit"
             android:layout_marginTop="8dip"
             android:layout_marginBottom="4dip"
             />
