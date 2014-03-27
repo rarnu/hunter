@@ -37,6 +37,7 @@ public class JobAdapter extends BaseAdapter<JobClass> {
         }
         JobClass item = list.get(position);
         if (item != null) {
+            // TODO: title color
             holder.tvTitle.setText(item.jobTitle);
             holder.tvArea.setText(context.getString(R.string.item_work_area_fmt, item.workArea));
             holder.tvCompany.setText(context.getString(R.string.item_company_fmt, item.companyName));

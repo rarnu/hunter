@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Vicky</string>
+    <string name="app_name">Vicky 猎头</string>
     <string name="menu_settings">设置</string>
     <string name="menu_share">分享</string>
     <string name="menu_add_job">新增职位</string>

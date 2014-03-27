@@ -11,6 +11,8 @@ import com.rarnu.hunter.loader.JobPropLoader;
 
 public class ManageJobPropFragment extends BaseFragment {
 
+    // TODO: edit job prop
+
     MenuItem miSave;
     ScrollView svProp;
     EditText vKey1, vKey2, vKey3, vKey4, vKey5;
