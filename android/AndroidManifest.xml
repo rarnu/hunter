@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.rarnu.hunter"
-          android:versionCode="1"
-          android:versionName="1.0">
+<manifest
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.rarnu.hunter"
+        android:versionCode="1"
+        android:versionName="1.0">
 
     <uses-sdk android:targetSdkVersion="17" android:minSdkVersion="14"/>
 
@@ -37,14 +38,41 @@
         </activity>
         <activity
                 android:name=".AdminDialog"
-                android:windowSoftInputMode="stateHidden"
+                android:windowSoftInputMode="stateHidden|adjustResize"
                 android:screenOrientation="portrait"
                 android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar">
         </activity>
-        <activity android:name=".ManageActivity"
-                  android:windowSoftInputMode="stateHidden"
-                  android:screenOrientation="portrait"
-                  android:label="@string/title_manage">
+        <activity
+                android:name=".ManageActivity"
+                android:windowSoftInputMode="stateHidden"
+                android:screenOrientation="portrait"
+                android:label="@string/title_manage">
+
+        </activity>
+        <activity
+                android:name=".ManageAddOrEditJobActivity"
+                android:windowSoftInputMode="stateHidden"
+                android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+                android:name=".ManageAddOrEditTimelineActivity"
+                android:windowSoftInputMode="stateHidden"
+                android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+                android:name=".ManageJobPropActivity"
+                android:windowSoftInputMode="stateHidden"
+                android:screenOrientation="portrait"
+                android:label="@string/title_prop">
+
+        </activity>
+        <activity
+                android:name=".InputDialog"
+                android:windowSoftInputMode="stateHidden|adjustResize"
+                android:screenOrientation="portrait"
+                android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar">
 
         </activity>
     </application>

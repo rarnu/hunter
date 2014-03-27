@@ -18,6 +18,12 @@
     <string name="title_manage_my">我的专栏</string>
     <string name="title_manage_count">数据统计</string>
     <string name="title_manage_data">修改资料</string>
+    <string name="title_input">编辑内容</string>
+    <string name="title_add_job">新增职位</string>
+    <string name="title_edit_job">修改职位</string>
+    <string name="title_add_timeline">新增时间线</string>
+    <string name="title_edit_timeline">修改时间线</string>
+    <string name="title_prop">编辑属性</string>
     <string name="item_work_area_fmt" formatted="false">工作地点:%s</string>
     <string name="item_company_fmt" formatted="false">公司描述:%s</string>
     <string name="hint_input_keyword">输入要搜索的关键字</string>
@@ -37,6 +43,7 @@
     <string name="detail_job_title">职位名称</string>
     <string name="detail_job_accountability">岗位职责</string>
     <string name="detail_job_requirement">任职要求</string>
+    <string name="detail_timeline_text">文章内容</string>
 
     <string name="history_head_vicky">Vicky 的个人简介</string>
     <string name="history_head_vicky_manage">我的个人简介</string>
@@ -65,6 +72,7 @@
     <string name="dialog_account">用户名</string>
     <string name="dialog_password">密码</string>
     <string name="hint">提示</string>
+    <string name="edit">修改</string>
     <string name="submit">提交</string>
     <string name="confirm_logout">确实要登出当前管理员帐号吗？</string>
     <string name="msg_account_empty">用户名和密码均不能为空</string>
@@ -73,5 +81,20 @@
     <string name="popup_job_edit">修改</string>
     <string name="popup_job_prop">属性</string>
     <string name="popup_job_delete">删除</string>
+
+    <string name="data_succ">保存数据成功</string>
+    <string name="data_fail">保存数据失败</string>
+    <string name="delete_fail">删除数据失败</string>
+    <string name="msg_job_data_empty">公司名称，工作地区，招聘人数和职位名称都是必填的</string>
+    <string name="msg_timeline_data_empty">发布日期和文章内容都是必填的</string>
+    <string name="msg_saving_data">正在保存数据，请稍候...</string>
+    <string name="msg_deleting_date">正在删除数据，请稍候...</string>
+    <string name="msg_delete_job">确定要删除这一条职位信息吗？</string>
+    <string name="msg_delete_timeline">确定要删除这一条时间线吗？</string>
+
+    <string name="prop_key">关键字</string>
+    <string name="prop_emergency">紧急程度</string>
+    <string name="prop_color">标题颜色</string>
+    <string name="prop_statue">职位状态</string>
 
 </resources>

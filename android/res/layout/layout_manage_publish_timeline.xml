@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dip">
+
+
+    <TextView
+            android:id="@+id/tvPublishDate"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:minHeight="48dip"
+            android:text="@string/detail_publish_date"
+            android:gravity="left|center"/>
+
+    <Button
+            android:id="@+id/vPublishDate"
+            android:layout_width="match_parent"
+            android:layout_height="48dip"
+            android:layout_toRightOf="@+id/tvPublishDate"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+
+    <TextView
+            android:id="@+id/tvComment"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:minHeight="48dip"
+            android:text="@string/detail_timeline_text"
+            android:gravity="left|center"
+            android:layout_below="@+id/tvPublishDate"
+            android:layout_marginTop="12dip"/>
+
+    <EditText
+            android:id="@+id/vComment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvComment"
+            android:gravity="left|top"
+            />
+
+    <RelativeLayout
+            android:id="@+id/pbSaving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pbSaving"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/msg_saving_data"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pbSaving"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
+
+</RelativeLayout>

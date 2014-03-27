@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/svProp">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dip">
+
+            <TextView
+                    android:id="@+id/tvKey"
+                    android:layout_width="80dip"
+                    android:layout_height="48dip"
+                    android:text="@string/prop_key"
+                    android:gravity="left|center_vertical"/>
+
+            <EditText
+                    android:id="@+id/vKey1"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:layout_toRightOf="@+id/tvKey"/>
+
+            <EditText
+                    android:id="@+id/vKey2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:layout_toRightOf="@+id/tvKey"
+                    android:layout_below="@+id/vKey1"/>
+
+            <EditText
+                    android:id="@+id/vKey3"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:layout_toRightOf="@+id/tvKey"
+                    android:layout_below="@+id/vKey2"/>
+
+            <EditText
+                    android:id="@+id/vKey4"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:layout_toRightOf="@+id/tvKey"
+                    android:layout_below="@+id/vKey3"/>
+
+            <EditText
+                    android:id="@+id/vKey5"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:layout_toRightOf="@+id/tvKey"
+                    android:layout_below="@+id/vKey4"/>
+
+            <TextView
+                    android:id="@+id/tvEmergency"
+                    android:layout_width="80dip"
+                    android:layout_height="48dip"
+                    android:text="@string/prop_emergency"
+                    android:layout_below="@+id/vKey5"
+                    android:gravity="left|center_vertical"/>
+
+            <Spinner
+                    android:id="@+id/vEmergency"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:layout_below="@+id/vKey5"
+                    android:layout_toRightOf="@+id/tvEmergency"/>
+
+            <TextView
+                    android:id="@+id/tvColor"
+                    android:layout_width="80dip"
+                    android:layout_height="48dip"
+                    android:text="@string/prop_color"
+                    android:layout_below="@+id/tvEmergency"
+                    android:gravity="left|center_vertical"/>
+
+            <Spinner
+                    android:id="@+id/vColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:layout_below="@+id/vEmergency"
+                    android:layout_toRightOf="@+id/tvColor"/>
+
+            <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="80dip"
+                    android:layout_height="48dip"
+                    android:text="@string/prop_statue"
+                    android:layout_below="@+id/tvColor"
+                    android:gravity="left|center_vertical"/>
+
+            <Spinner
+                    android:id="@+id/vStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    android:layout_below="@+id/vColor"
+                    android:layout_toRightOf="@+id/tvStatus"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+            android:id="@+id/tvNoConnection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/hint_no_connection"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+    <RelativeLayout
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pb"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/list_loading"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pb"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/pbSaving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pbSaving"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/msg_saving_data"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pbSaving"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
+
+</RelativeLayout>

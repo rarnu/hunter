@@ -119,4 +119,189 @@ public class MobileApi {
         }
         return lc;
     }
+
+    public static ResultClass editAnno(String comment) {
+        List<BasicNameValuePair> param = new ArrayList<BasicNameValuePair>();
+        param.add(new BasicNameValuePair("_from", "mobile"));
+        param.add(new BasicNameValuePair("_comment", comment));
+        String ret = HttpRequest.post(BASE_URL + "api_edit_anno.php", param, HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static ResultClass editData(DataClass data) {
+        List<BasicNameValuePair> param = new ArrayList<BasicNameValuePair>();
+        param.add(new BasicNameValuePair("_from", "mobile"));
+        param.add(new BasicNameValuePair("_id", String.valueOf(data.id)));
+        param.add(new BasicNameValuePair("_mail_work", data.mailWork));
+        param.add(new BasicNameValuePair("_mail_private", data.mailPrivate));
+        param.add(new BasicNameValuePair("_qq", data.qq));
+        param.add(new BasicNameValuePair("_wx", data.wx));
+        param.add(new BasicNameValuePair("_hangouts", data.hangouts));
+        param.add(new BasicNameValuePair("_phone_work", data.phoneWork));
+        param.add(new BasicNameValuePair("_phone_private", data.phonePrivate));
+        param.add(new BasicNameValuePair("_address", data.address));
+        String ret = HttpRequest.post(BASE_URL + "api_edit_data.php", param, HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static ResultClass publishJob(JobDetailClass jdc) {
+        List<BasicNameValuePair> param = new ArrayList<BasicNameValuePair>();
+        param.add(new BasicNameValuePair("_from", "mobile"));
+        param.add(new BasicNameValuePair("_company_name", jdc.companyName));
+        param.add(new BasicNameValuePair("_company_desc", jdc.companyDesc));
+        param.add(new BasicNameValuePair("_company_heads", String.valueOf(jdc.companyHeads)));
+        param.add(new BasicNameValuePair("_work_area", jdc.workArea));
+        param.add(new BasicNameValuePair("_work_years", String.valueOf(jdc.workYears)));
+        param.add(new BasicNameValuePair("_education", String.valueOf(jdc.education)));
+        param.add(new BasicNameValuePair("_in_heads", String.valueOf(jdc.inHeads)));
+        param.add(new BasicNameValuePair("_publish_date", jdc.publishDate));
+        param.add(new BasicNameValuePair("_end_aate", jdc.endDate));
+        param.add(new BasicNameValuePair("_salary_range", jdc.salaryRange));
+        param.add(new BasicNameValuePair("_job_title", jdc.jobTitle));
+        param.add(new BasicNameValuePair("_job_accountability", jdc.jobAccoutability));
+        param.add(new BasicNameValuePair("_job_requirement", jdc.jobRequirement));
+        String ret = HttpRequest.post(BASE_URL + "api_publish.php", param, HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static ResultClass editJob(JobDetailClass jdc) {
+        List<BasicNameValuePair> param = new ArrayList<BasicNameValuePair>();
+        param.add(new BasicNameValuePair("_from", "mobile"));
+        param.add(new BasicNameValuePair("_id", String.valueOf(jdc.id)));
+        param.add(new BasicNameValuePair("_company_name", jdc.companyName));
+        param.add(new BasicNameValuePair("_company_desc", jdc.companyDesc));
+        param.add(new BasicNameValuePair("_company_heads", String.valueOf(jdc.companyHeads)));
+        param.add(new BasicNameValuePair("_work_area", jdc.workArea));
+        param.add(new BasicNameValuePair("_work_years", String.valueOf(jdc.workYears)));
+        param.add(new BasicNameValuePair("_education", String.valueOf(jdc.education)));
+        param.add(new BasicNameValuePair("_in_heads", String.valueOf(jdc.inHeads)));
+        param.add(new BasicNameValuePair("_publish_date", jdc.publishDate));
+        param.add(new BasicNameValuePair("_end_aate", jdc.endDate));
+        param.add(new BasicNameValuePair("_salary_range", jdc.salaryRange));
+        param.add(new BasicNameValuePair("_job_title", jdc.jobTitle));
+        param.add(new BasicNameValuePair("_job_accountability", jdc.jobAccoutability));
+        param.add(new BasicNameValuePair("_job_requirement", jdc.jobRequirement));
+        String ret = HttpRequest.post(BASE_URL + "api_edit.php", param, HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static ResultClass deleteJob(int _id) {
+        String ret = HttpRequest.get(BASE_URL + "api_delete_job.php", String.format("_id=%d", _id), HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static ResultClass publishTimeline(TimelineClass tc) {
+        List<BasicNameValuePair> param = new ArrayList<BasicNameValuePair>();
+        param.add(new BasicNameValuePair("_from", "mobile"));
+        param.add(new BasicNameValuePair("_publish_date", tc.publishDate));
+        param.add(new BasicNameValuePair("_comment", tc.comment));
+        String ret = HttpRequest.post(BASE_URL + "api_publish_timeline.php", param, HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static ResultClass editTimeline(TimelineClass tc) {
+        List<BasicNameValuePair> param = new ArrayList<BasicNameValuePair>();
+        param.add(new BasicNameValuePair("_from", "mobile"));
+        param.add(new BasicNameValuePair("_id", String.valueOf(tc.id)));
+        param.add(new BasicNameValuePair("_publish_date", tc.publishDate));
+        param.add(new BasicNameValuePair("_comment", tc.comment));
+        String ret = HttpRequest.post(BASE_URL + "api_edit_timeline.php", param, HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static ResultClass deleteTimeline(int _id) {
+        String ret = HttpRequest.get(BASE_URL + "api_delete_timeline.php", String.format("_id=%d", _id), HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
+
+    public static JobPropClass queryJobProp(int _id) {
+        String ret = HttpRequest.get(BASE_URL + "api_query_job_prop.php", String.format("_id=%d", _id), HTTP.UTF_8);
+        JobPropClass jpc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            jpc = JobPropClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return jpc;
+    }
+
+    public static ResultClass editJobProp(JobPropClass jpc) {
+        try {
+            jpc.keywords = URLEncoder.encode(jpc.keywords, HTTP.UTF_8);
+            jpc.key2 = URLEncoder.encode(jpc.key2, HTTP.UTF_8);
+            jpc.key3 = URLEncoder.encode(jpc.key3, HTTP.UTF_8);
+            jpc.key4 = URLEncoder.encode(jpc.key4, HTTP.UTF_8);
+            jpc.key5 = URLEncoder.encode(jpc.key5, HTTP.UTF_8);
+        } catch (Exception e) {
+
+        }
+        String ret = HttpRequest.get(BASE_URL + "api_edit_job_prop.php", String.format(
+                "_id=%d&_keywords=%s&_key2=%s&_key3=%s&_key4=%s&_key5=%s&_emergency=%d&_color=%d&_status=%d",
+                jpc.id, jpc.keywords, jpc.key2, jpc.key3, jpc.key4, jpc.key5, jpc.emergency, jpc.color, jpc.status), HTTP.UTF_8);
+        ResultClass rc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            rc = ResultClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return rc;
+    }
 }

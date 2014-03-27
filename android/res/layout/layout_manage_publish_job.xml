@@ -20,13 +20,15 @@
                     android:id="@+id/tvCompanyName"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_company_name"
                     android:gravity="left|center"/>
 
-            <TextView
+            <EditText
                     android:id="@+id/vCompanyName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:singleLine="true"
                     android:maxLines="1"
                     android:ellipsize="end"
@@ -37,33 +39,36 @@
                     android:id="@+id/tvCompanyDesc"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_company_desc"
                     android:gravity="left|center"
                     android:layout_below="@+id/vCompanyName"
-                    android:layout_marginTop="12dip"/>
+                    android:layout_marginTop="12dip"
+                    />
 
-            <TextView
+            <Button
                     android:id="@+id/vCompanyDesc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left|center_vertical"
+                    android:layout_height="48dip"
                     android:layout_toRightOf="@+id/tvCompanyDesc"
                     android:layout_below="@+id/vCompanyName"
-                    android:layout_marginTop="12dip"/>
+                    android:layout_marginTop="12dip"
+                    android:text="@string/edit"/>
 
             <TextView
                     android:id="@+id/tvCompanyHeads"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_company_heads"
                     android:gravity="left|center"
                     android:layout_below="@+id/vCompanyDesc"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <Spinner
                     android:id="@+id/vCompanyHeads"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dip"
                     android:gravity="left|center_vertical"
                     android:layout_toRightOf="@+id/tvCompanyHeads"
                     android:layout_below="@+id/vCompanyDesc"
@@ -76,36 +81,41 @@
                     android:id="@+id/tvInHeads"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_in_heads"
                     android:gravity="left|center"
                     android:layout_below="@+id/vCompanyHeads"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <EditText
                     android:id="@+id/vInHeads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:gravity="left|center_vertical"
                     android:layout_toRightOf="@+id/tvInHeads"
                     android:layout_below="@+id/vCompanyHeads"
                     android:layout_marginTop="12dip"
                     android:singleLine="true"
                     android:maxLines="1"
-                    android:ellipsize="end"/>
+                    android:ellipsize="end"
+                    android:inputType="numberDecimal"/>
 
             <TextView
                     android:id="@+id/tvWorkArea"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_work_area"
                     android:gravity="left|center"
                     android:layout_below="@+id/vInHeads"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <EditText
                     android:id="@+id/vWorkArea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:gravity="left|center_vertical"
                     android:layout_toRightOf="@+id/tvWorkArea"
                     android:layout_below="@+id/vInHeads"
@@ -118,15 +128,16 @@
                     android:id="@+id/tvWorkYears"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_work_years"
                     android:gravity="left|center"
                     android:layout_below="@+id/vWorkArea"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <Spinner
                     android:id="@+id/vWorkYears"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dip"
                     android:gravity="left|center_vertical"
                     android:layout_toRightOf="@+id/tvWorkYears"
                     android:layout_below="@+id/vWorkArea"
@@ -139,15 +150,16 @@
                     android:id="@+id/tvEducation"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_education"
                     android:gravity="left|center"
                     android:layout_below="@+id/vWorkYears"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <Spinner
                     android:id="@+id/vEducation"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dip"
                     android:gravity="left|center_vertical"
                     android:layout_toRightOf="@+id/tvEducation"
                     android:layout_below="@+id/vWorkYears"
@@ -160,15 +172,17 @@
                     android:id="@+id/tvSalaryRange"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_salary_range"
                     android:gravity="left|center"
                     android:layout_below="@+id/vEducation"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <EditText
                     android:id="@+id/vSalaryRange"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:gravity="left|center_vertical"
                     android:layout_toRightOf="@+id/tvSalaryRange"
                     android:layout_below="@+id/vEducation"
@@ -181,16 +195,16 @@
                     android:id="@+id/tvPublishDate"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_publish_date"
                     android:gravity="left|center"
                     android:layout_below="@+id/vSalaryRange"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <Button
                     android:id="@+id/vPublishDate"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left|center_vertical"
+                    android:layout_height="48dip"
                     android:layout_toRightOf="@+id/tvPublishDate"
                     android:layout_below="@+id/vSalaryRange"
                     android:layout_marginTop="12dip"
@@ -202,16 +216,16 @@
                     android:id="@+id/tvEndDate"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_end_date"
                     android:gravity="left|center"
                     android:layout_below="@+id/vPublishDate"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <Button
                     android:id="@+id/vEndDate"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left|center_vertical"
+                    android:layout_height="48dip"
                     android:layout_toRightOf="@+id/tvEndDate"
                     android:layout_below="@+id/vPublishDate"
                     android:layout_marginTop="12dip"
@@ -223,15 +237,17 @@
                     android:id="@+id/tvJobTitle"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_job_title"
                     android:gravity="left|center"
                     android:layout_below="@+id/vEndDate"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <EditText
                     android:id="@+id/vJobTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:gravity="left|center_vertical"
                     android:layout_toRightOf="@+id/tvJobTitle"
                     android:layout_below="@+id/vEndDate"
@@ -244,38 +260,40 @@
                     android:id="@+id/tvJobAccountability"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_job_accountability"
                     android:gravity="left|center"
                     android:layout_below="@+id/vJobTitle"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <Button
                     android:id="@+id/vJobAccountability"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left|center_vertical"
+                    android:layout_height="48dip"
                     android:layout_toRightOf="@+id/tvJobAccountability"
                     android:layout_below="@+id/vJobTitle"
                     android:layout_marginTop="12dip"
+                    android:text="@string/edit"
                     />
 
             <TextView
                     android:id="@+id/tvJobRequirement"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dip"
                     android:text="@string/detail_job_requirement"
                     android:gravity="left|center"
                     android:layout_below="@+id/vJobAccountability"
                     android:layout_marginTop="12dip"/>
 
-            <TextView
+            <Button
                     android:id="@+id/vJobRequirement"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left|center_vertical"
+                    android:layout_height="48dip"
                     android:layout_toRightOf="@+id/tvJobRequirement"
                     android:layout_below="@+id/vJobAccountability"
                     android:layout_marginTop="12dip"
+                    android:text="@string/edit"
                     />
 
         </RelativeLayout>
@@ -295,6 +313,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
             android:visibility="gone">
         <ProgressBar
                 android:id="@+id/pb"
@@ -302,12 +325,41 @@
                 android:layout_height="48dip"
                 style="@android:style/Widget.Holo.Light.ProgressBar.Large"
                 />
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="48dip"
-                  android:text="@string/list_loading"
-                  android:gravity="center"
-                  android:layout_marginLeft="8dip"
-                  android:layout_toRightOf="@+id/pb"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/list_loading"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pb"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/pbSaving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pbSaving"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/msg_saving_data"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pbSaving"
+                android:textColor="@color/white"/>
     </RelativeLayout>
 
 </RelativeLayout>

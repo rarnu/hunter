@@ -7,27 +7,20 @@
 
     <TextView
             android:id="@+id/tvHeadVicky"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="48dip"
             android:text="@string/history_head_vicky_manage"
             android:paddingTop="4dip"
             android:paddingLeft="8dip"
-            android:paddingRight="8dip"/>
-    <EditText
-            android:id="@+id/vHeadVicky"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dip"
-            android:layout_marginRight="12dip"
-            android:layout_below="@+id/tvHeadVicky"/>
+            android:paddingRight="8dip"
+            android:gravity="left|center_vertical"/>
 
     <Button
-            android:id="@+id/btnSubmit"
+            android:id="@+id/btnEdit"
             android:layout_width="120dip"
             android:layout_height="48dip"
-            android:layout_below="@+id/vHeadVicky"
             android:layout_alignParentRight="true"
-            android:text="@string/submit"
+            android:text="@string/edit"
             android:layout_marginRight="8dip"/>
 
     <TextView
@@ -35,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dip"
             android:background="@color/gray"
-            android:layout_below="@+id/btnSubmit"
+            android:layout_below="@+id/btnEdit"
             android:layout_marginTop="8dip"
             android:layout_marginBottom="4dip"
             />
@@ -61,6 +54,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
             android:visibility="gone">
         <ProgressBar
                 android:id="@+id/pb"
@@ -68,12 +66,41 @@
                 android:layout_height="48dip"
                 style="@android:style/Widget.Holo.Light.ProgressBar.Large"
                 />
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="48dip"
-                  android:text="@string/list_loading"
-                  android:gravity="center"
-                  android:layout_marginLeft="8dip"
-                  android:layout_toRightOf="@+id/pb"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/list_loading"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pb"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/pbDeleting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pbDeleting"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/msg_deleting_date"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pbDeleting"
+                android:textColor="@color/white"/>
     </RelativeLayout>
 
 </RelativeLayout>

@@ -35,6 +35,7 @@
                         android:minHeight="48dip"
                         android:text="@string/contact_mail_work"
                         android:padding="4dip"
+                        android:gravity="left|center_vertical"
 
                         />
 
@@ -57,6 +58,7 @@
                         android:text="@string/contact_mail_private"
                         android:padding="4dip"
                         android:layout_below="@+id/tvMailWork"
+                        android:gravity="left|center_vertical"
                         />
 
                 <EditText
@@ -97,6 +99,7 @@
                         android:minHeight="48dip"
                         android:text="@string/contact_qq"
                         android:padding="4dip"
+                        android:gravity="left|center_vertical"
                         />
 
                 <EditText
@@ -118,6 +121,7 @@
                         android:text="@string/contact_hangouts"
                         android:padding="4dip"
                         android:layout_below="@+id/tvQQ"
+                        android:gravity="left|center_vertical"
                         />
 
                 <EditText
@@ -140,6 +144,7 @@
                         android:text="@string/contact_wx"
                         android:padding="4dip"
                         android:layout_below="@+id/tvHangouts"
+                        android:gravity="left|center_vertical"
                         />
 
                 <EditText
@@ -180,7 +185,7 @@
                         android:minHeight="48dip"
                         android:text="@string/contact_phone_work"
                         android:padding="4dip"
-
+                        android:gravity="left|center_vertical"
                         />
 
                 <EditText
@@ -202,6 +207,7 @@
                         android:text="@string/contact_phone_private"
                         android:padding="4dip"
                         android:layout_below="@+id/tvPhoneWork"
+                        android:gravity="left|center_vertical"
                         />
 
                 <EditText
@@ -224,7 +230,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/layPhone"
                     android:layout_marginTop="8dip"
-                    android:text="@string/contact_office"/>
+                    android:text="@string/contact_office"
+                    />
 
             <RelativeLayout
                     android:layout_marginLeft="4dip"
@@ -262,6 +269,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
             android:visibility="gone">
         <ProgressBar
                 android:id="@+id/pb"
@@ -269,12 +281,41 @@
                 android:layout_height="48dip"
                 style="@android:style/Widget.Holo.Light.ProgressBar.Large"
                 />
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="48dip"
-                  android:text="@string/list_loading"
-                  android:gravity="center"
-                  android:layout_marginLeft="8dip"
-                  android:layout_toRightOf="@+id/pb"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/list_loading"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pb"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/pbSaving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
+            android:visibility="gone">
+        <ProgressBar
+                android:id="@+id/pbSaving"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/msg_saving_data"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pbSaving"
+                android:textColor="@color/white"/>
     </RelativeLayout>
 
 </RelativeLayout>

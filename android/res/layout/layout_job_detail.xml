@@ -295,6 +295,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:background="#AA000000"
+            android:paddingTop="16dip"
+            android:paddingBottom="16dip"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
             android:visibility="gone">
         <ProgressBar
                 android:id="@+id/pb"
@@ -302,12 +307,14 @@
                 android:layout_height="48dip"
                 style="@android:style/Widget.Holo.Light.ProgressBar.Large"
                 />
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="48dip"
-                  android:text="@string/list_loading"
-                  android:gravity="center"
-                  android:layout_marginLeft="8dip"
-                  android:layout_toRightOf="@+id/pb"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="@string/list_loading"
+                android:gravity="center"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/pb"
+                android:textColor="@color/white"/>
     </RelativeLayout>
 
 </RelativeLayout>
