@@ -149,6 +149,7 @@ public class ManageDataFragment extends BaseFragment implements Loader.OnLoadCom
                 ResultClass rc = MobileApi.editData(item);
                 Message msg = new Message();
                 msg.what = 1;
+                // TODO: save data error?
                 if (rc != null) {
                     msg.arg1 = rc.result;
                 } else {
