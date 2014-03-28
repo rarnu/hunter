@@ -13,6 +13,7 @@ import com.rarnu.devlib.base.BaseFragment;
 import com.rarnu.hunter.R;
 import com.rarnu.hunter.api.DataClass;
 import com.rarnu.hunter.api.MobileApi;
+import com.rarnu.hunter.common.LocalDir;
 import com.rarnu.hunter.loader.DataLoader;
 import com.rarnu.utils.DownloadUtils;
 import com.rarnu.utils.ResourceUtils;
@@ -159,8 +160,7 @@ public class ContactFragment extends BaseFragment implements Loader.OnLoadComple
         rllp.width = width;
         rllp.height = height;
         ivMap.setLayoutParams(rllp);
-        String localDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/.vicky/";
-        DownloadUtils.downloadFileT(getActivity(), ivMap, MobileApi.MAP_URL, localDir, "map.png", null);
+        DownloadUtils.downloadFileT(getActivity(), ivMap, MobileApi.MAP_URL, LocalDir.LOCALDIR, "map.png", null);
 
     }
 }

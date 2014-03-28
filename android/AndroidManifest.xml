@@ -31,11 +31,11 @@
                 android:windowSoftInputMode="stateHidden"
                 android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".JobDetailActivity"
-                  android:label="@string/title_job_detail"
-                  android:windowSoftInputMode="stateHidden"
-                  android:screenOrientation="portrait">
-
+        <activity
+                android:name=".JobDetailActivity"
+                android:label="@string/title_job_detail"
+                android:windowSoftInputMode="stateHidden"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".AdminDialog"
