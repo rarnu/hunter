@@ -29,7 +29,7 @@ function getViewCount() {
         var page = 0;
 
         function returnData(data) {
-                $("#_feedback")[0].innerHTML = "<tr><td><b>#</b></td><td><b>设备应用信息</b></td><td><b>帐号列表</b></td><td><b>日期</b></td></tr>"+data;
+                $("#_feedback")[0].innerHTML = "<tr><td><b>#</b></td><td><b>设备应用信息</b></td><td><b>帐号列表</b></td><td><b>日期</b></td><td><b>反馈信息</b></td></tr>"+data;
                 $("#_pages")[0].innerHTML = page+"/"+pagecount;
                 $("#btn_prev")[0].disabled = (page <= 1);
                 $("#btn_next")[0].disabled = (page >= pagecount);
@@ -44,10 +44,10 @@ function getViewCount() {
 
         function getData(idx) {
                 page = idx;
-                $.get("../api/api_query_feedback.php?_from=site&_type=0&_page="+page, returnData);
+                $.get("../api/api_query_feedback.php?_from=site&_type=1&_page="+page, returnData);
         }
         function getPageCount() {
-                $.get("../api/api_query_pagecount_feedback.php?_from=site&_type=0", returnPage);
+                $.get("../api/api_query_pagecount_feedback.php?_from=site&_type=1", returnPage);
         }
  	function prevPage() {
                 if (page > 1) {
@@ -66,12 +66,7 @@ function getViewCount() {
 
 <body>
 <div class="container">
-	<div class="panel panel-default">
-		<table class="table" border="0" cellspacing="4px" cellpadding="4px">
-			<tr><td width="25%">总浏览量（次）</td><td id="_view_count"></td></tr>
-		</table>
-	</div>
-        <div class="panel panel-default"><div class="panel-heading"><font size="3">访问过的用户</font></div>
+        <div class="panel panel-default"><div class="panel-heading"><font size="3">用户反馈的信息</font></div>
                 <table class="table" name="_feedback" id="_feedback">
                 </table>
         </div>

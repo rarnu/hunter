@@ -33,6 +33,7 @@
 		<li><a href="manage.php">职位管理</a></li>
 		<li><a href="my.php">我的专栏</a></li>
                 <li><a href="count.php">数据统计</a></li>
+		<li><a href="feedback.php">用户反馈</a></li>
                 <li><a href="data.php">修改资料</a></li>
             </div><!--/.nav-collapse -->
         </div>

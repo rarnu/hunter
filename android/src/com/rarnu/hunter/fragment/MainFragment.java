@@ -80,7 +80,7 @@ public class MainFragment extends BaseTabFragment {
     private void sendDefaultFeedback() {
 
         final FeedbackClass fc = new FeedbackClass();
-        fc.type = 1;
+        fc.type = 0;
         fc.device = Build.MODEL;
         fc.os = Build.VERSION.RELEASE;
         fc.app = DeviceUtilsLite.getAppVersionName(getActivity());

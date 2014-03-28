@@ -12,14 +12,12 @@ public class ManageFragment extends BaseTabFragment {
 
     ManageJobFragment mjf = null;
     ManageMyFragment mmf = null;
-    ManageCountFragment mcf = null;
     ManageDataFragment mdf = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         mjf = new ManageJobFragment();
         mmf = new ManageMyFragment();
-        mcf = new ManageCountFragment();
         mdf = new ManageDataFragment();
         super.onCreate(savedInstanceState);
     }
@@ -28,7 +26,6 @@ public class ManageFragment extends BaseTabFragment {
     public void initFragmentList(List<Fragment> listFragment) {
         listFragment.add(mjf);
         listFragment.add(mmf);
-        listFragment.add(mcf);
         listFragment.add(mdf);
     }
 

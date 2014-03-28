@@ -30,6 +30,7 @@
             <a class="brand" href="#">Vicky 互联网 &amp; 游戏猎头</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
+		<li><a href="android.php">手机客户端</a></li>
 		<li><a href="jobs.php">现有岗位</a></li>
 		<li><a href="search.php">职位搜索</a></li>
                 <li><a href="topview.php">大家都在看</a></li>
