@@ -1,5 +1,6 @@
 package com.rarnu.hunter.fragment;
 
+import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,11 +8,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import com.rarnu.devlib.base.BaseFragment;
 import com.rarnu.hunter.R;
 import com.rarnu.hunter.api.JobClass;
 import com.rarnu.hunter.api.JobDetailClass;
+import com.rarnu.hunter.api.MobileApi;
 import com.rarnu.hunter.common.Ids;
 import com.rarnu.hunter.loader.JobDetailLoader;
 
@@ -91,6 +94,16 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
         job = (JobClass) getActivity().getIntent().getSerializableExtra("job");
         loader.setId(job.id);
         doLoading();
+        addViewCount(job.id);
+    }
+
+    private void addViewCount(final int id) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MobileApi.addViewCount(id);
+            }
+        }).start();
     }
 
     private void doLoading() {
@@ -112,19 +125,20 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
 
     @Override
     public void initMenu(Menu menu) {
+        ShareActionProvider provider = new ShareActionProvider(getActivity());
+        provider.setShareIntent(getShareIntent());
         miShare = menu.add(0, Ids.MENU_ID_SHARE, 99, R.string.menu_share);
         miShare.setIcon(android.R.drawable.ic_menu_share);
         miShare.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        miShare.setActionProvider(provider);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case Ids.MENU_ID_SHARE:
-                // TODO: share job
-                break;
-        }
-        return true;
+    private Intent getShareIntent() {
+        Intent inShare = new Intent(Intent.ACTION_SEND);
+        inShare.setType("image/*");
+        inShare.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_title));
+        inShare.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_job, job.companyName, job.workArea, job.jobTitle));
+        return inShare;
     }
 
     @Override

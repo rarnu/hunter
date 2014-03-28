@@ -28,6 +28,21 @@ public class JobPropClass implements Serializable {
             jpc.emergency = json.getInt("emergency");
             jpc.color = json.getInt("color");
             jpc.status = json.getInt("status");
+            if (jpc.keywords == null || jpc.keywords.equals("null")) {
+                jpc.keywords = "";
+            }
+            if (jpc.key2 == null || jpc.key2.equals("null")) {
+                jpc.key2 = "";
+            }
+            if (jpc.key3 == null || jpc.key3.equals("null")) {
+                jpc.key3 = "";
+            }
+            if (jpc.key4 == null || jpc.key4.equals("null")) {
+                jpc.key4 = "";
+            }
+            if (jpc.key5 == null || jpc.key5.equals("null")) {
+                jpc.key5 = "";
+            }
         } catch (Exception e) {
 
         }

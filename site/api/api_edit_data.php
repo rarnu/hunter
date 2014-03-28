@@ -16,7 +16,6 @@ $db = openConnection();
 $sql = "update hunter_contact set t_mail_work='$mail_work', t_mail_private='$mail_private',t_qq='$qq', t_wx='$wx', t_hangouts='$hangouts', t_phone_work='$phone_work', t_phone_private='$phone_private', t_address='$address' where id=$id";
 $result = query($db, $sql);
 closeConnection($db);
-echo $result;
 
 if ($from == "site") {
 	if ($result == 1) {

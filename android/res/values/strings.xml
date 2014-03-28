@@ -97,4 +97,13 @@
     <string name="prop_color">标题颜色</string>
     <string name="prop_statue">职位状态</string>
 
+    <string name="toast_check_update">正在检查更新</string>
+    <string name="toast_no_update">当前已是最新版本</string>
+    <string name="toast_update_found" formatted="false">发现新版本，最新版本 :%s\n更新日志：\n%s</string>
+
+    <string name="toast_feedback_empty">反馈的内容不能为空</string>
+    <string name="share_title">分享一款优秀的软件</string>
+    <string name="share_body">你还在智联、51JOB、猎聘网等网站上海投简历么？作为互联网的精英们，你们ou••ou••out了，只需拿出手机，轻轻一滑，这儿有最新最热的靠谱职位，这有专属你的猎头顾问根据你的要求进行最佳职位匹配，这有专业的面试辅导助力面试•••让你期待的那些好机会近在咫尺。请关注 vickylh.cc.cm 或是下载《Vicky 猎头》手机App。</string>
+    <string name="share_job" formatted="false">给您分享一个好职位，来自%s(%s)的%s，详细信息请关注 vickylh.cc.cm 或是下载《Vicky 猎头》手机App来搜索哦:)</string>
+    <string name="about_desc">您身边的专业猎头，工作无忧</string>
 </resources>

@@ -2,11 +2,11 @@ package com.rarnu.hunter;
 
 import android.app.Fragment;
 import com.rarnu.devlib.base.BaseActivity;
-import com.rarnu.hunter.fragment.ManageJobPropFragment;
+import com.rarnu.hunter.fragment.FeedbackFragment;
 
-public class ManageJobPropActivity extends BaseActivity {
+public class FeedbackActivity extends BaseActivity{
 
-    ManageJobPropFragment mjpf = null;
+    FeedbackFragment ff = null;
 
     @Override
     public int getIcon() {
@@ -15,10 +15,10 @@ public class ManageJobPropActivity extends BaseActivity {
 
     @Override
     public Fragment replaceFragment() {
-        if (mjpf == null) {
-            mjpf = new ManageJobPropFragment();
+        if (ff == null) {
+            ff = new FeedbackFragment();
         }
-        return mjpf;
+        return ff;
     }
 
     @Override

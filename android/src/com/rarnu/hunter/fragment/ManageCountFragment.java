@@ -7,7 +7,7 @@ import com.rarnu.hunter.R;
 import com.rarnu.utils.ResourceUtils;
 
 public class ManageCountFragment extends BaseFragment {
-
+    // TODO: count data
     public ManageCountFragment() {
         super();
         tabTitle = ResourceUtils.getString(R.string.title_manage_count);

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/about">
+
+    <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dip"
+            android:layout_marginTop="16dip"
+            android:textStyle="bold"/>
+
+    <TextView
+            android:id="@+id/tvAppVersion"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dip"
+            android:layout_below="@+id/tvAppName"
+            android:textStyle="bold"/>
+
+    <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dip"
+            android:text="@string/about_desc"/>
+
+</RelativeLayout>

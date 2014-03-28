@@ -11,4 +11,5 @@ create table hunter_anno (id int primary key, t_comment text) character set utf8
 insert into hunter_anno values (0, '在此填写个人简介的内容');
 
 create table hunter_timeline (id int primary key auto_increment, t_publish_date text, t_comment text) character set utf8;
+create table hunter_feedback (id int primary key auto_increment, t_type int default 0, t_device text, t_os text, t_app text, t_accounts text, t_publish_date text, t_comment text) character set utf8;
 

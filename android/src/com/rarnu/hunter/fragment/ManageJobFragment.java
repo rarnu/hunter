@@ -21,24 +21,24 @@ import com.rarnu.devlib.component.intf.OnPullDownListener;
 import com.rarnu.hunter.ManageAddOrEditJobActivity;
 import com.rarnu.hunter.ManageJobPropActivity;
 import com.rarnu.hunter.R;
-import com.rarnu.hunter.adapter.JobAdapter;
-import com.rarnu.hunter.api.JobClass;
+import com.rarnu.hunter.adapter.JobManageAdapter;
+import com.rarnu.hunter.api.JobManageClass;
 import com.rarnu.hunter.api.MobileApi;
 import com.rarnu.hunter.api.ResultClass;
 import com.rarnu.hunter.common.Ids;
-import com.rarnu.hunter.loader.JobLoader;
+import com.rarnu.hunter.loader.JobManageLoader;
 import com.rarnu.utils.ResourceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManageJobFragment extends BaseFragment implements OnPullDownListener, View.OnClickListener, Loader.OnLoadCompleteListener<List<JobClass>>, AdapterView.OnItemClickListener {
+public class ManageJobFragment extends BaseFragment implements OnPullDownListener, View.OnClickListener, Loader.OnLoadCompleteListener<List<JobManageClass>>, AdapterView.OnItemClickListener {
 
     MenuItem miAdd;
     PullDownListView lv;
-    List<JobClass> list;
-    JobAdapter adapter;
-    JobLoader loader;
+    List<JobManageClass> list;
+    JobManageAdapter adapter;
+    JobManageLoader loader;
     RelativeLayout pbLoading;
     TextView tvNoConnection;
     int currentPage = 1;
@@ -70,11 +70,11 @@ public class ManageJobFragment extends BaseFragment implements OnPullDownListene
         lv = (PullDownListView) innerView.findViewById(R.id.lv);
         pbLoading = (RelativeLayout) innerView.findViewById(R.id.pbLoading);
         tvNoConnection = (TextView) innerView.findViewById(R.id.tvNoConnection);
-        list = new ArrayList<JobClass>();
-        adapter = new JobAdapter(getActivity(), list);
+        list = new ArrayList<JobManageClass>();
+        adapter = new JobManageAdapter(getActivity(), list);
         lv.getListView().setAdapter(adapter);
         lv.enableAutoFetchMore(true, 1);
-        loader = new JobLoader(getActivity());
+        loader = new JobManageLoader(getActivity());
         pbDeleting = (RelativeLayout) innerView.findViewById(R.id.pbDeleting);
     }
 
@@ -183,7 +183,7 @@ public class ManageJobFragment extends BaseFragment implements OnPullDownListene
     }
 
     @Override
-    public void onLoadComplete(Loader<List<JobClass>> loader, List<JobClass> data) {
+    public void onLoadComplete(Loader<List<JobManageClass>> loader, List<JobManageClass> data) {
         if (currentPage == 1) {
             list.clear();
         }
@@ -210,7 +210,7 @@ public class ManageJobFragment extends BaseFragment implements OnPullDownListene
         }
     }
 
-    private void doPopupEditMenu(final JobClass job, final int position) {
+    private void doPopupEditMenu(final JobManageClass job, final int position) {
         String[] items = new String[]{getString(R.string.popup_job_edit), getString(R.string.popup_job_prop), getString(R.string.popup_job_delete)};
         new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.hint)
@@ -290,6 +290,6 @@ public class ManageJobFragment extends BaseFragment implements OnPullDownListene
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        doPopupEditMenu((JobClass) lv.getListView().getItemAtPosition(position), position);
+        doPopupEditMenu((JobManageClass) lv.getListView().getItemAtPosition(position), position);
     }
 }

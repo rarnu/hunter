@@ -16,10 +16,27 @@ public class MobileApi {
     private static final String SITE_URL = "http://rarnu.7thgen.info/vicky/";
     private static final String BASE_URL = SITE_URL + "api/";
     public static final String MAP_URL = SITE_URL + "image/map.png";
+    public static final String DOWNLOAD_URL = SITE_URL + "download/";
 
     public static List<JobClass> queryJob(int _page) {
         String ret = HttpRequest.get(BASE_URL + "api_query_job.php", String.format("_from=mobile&_page=%d", _page), HTTP.UTF_8);
         return parseString(ret);
+    }
+
+    public static List<JobManageClass> queryManage(int _page) {
+        String ret = HttpRequest.get(BASE_URL + "api_query_manage.php", String.format("_from=mobile&_page=%d", _page), HTTP.UTF_8);
+        List<JobManageClass> list = null;
+        try {
+            JSONObject jsonRet = new JSONObject(ret);
+            JSONArray jarr = jsonRet.getJSONArray("data");
+            list = new ArrayList<JobManageClass>();
+            for (int i = 0; i < jarr.length(); i++) {
+                list.add(JobManageClass.fromJson(jarr.getJSONObject(i)));
+            }
+        } catch (Exception e) {
+
+        }
+        return list;
     }
 
     public static List<JobClass> queryJobSearch(String _keyword, int _page) {
@@ -303,5 +320,34 @@ public class MobileApi {
 
         }
         return rc;
+    }
+
+    public static void addViewCount(int _id) {
+        HttpRequest.get(BASE_URL + "api_add_view_count.php", String.format("_id=%d", _id), HTTP.UTF_8);
+    }
+
+    public static UpdateClass checkUpdate(int _version) {
+        String ret = HttpRequest.get(BASE_URL + "api_check_update.php", String.format("_version=%d", _version), HTTP.UTF_8);
+        UpdateClass uc = null;
+        try {
+            JSONObject json = new JSONObject(ret);
+            uc = UpdateClass.fromJson(json);
+        } catch (Exception e) {
+
+        }
+        return uc;
+    }
+
+    public static void addFeedback(FeedbackClass fc) {
+        List<BasicNameValuePair> param = new ArrayList<BasicNameValuePair>();
+        param.add(new BasicNameValuePair("_type", String.valueOf(fc.type)));
+        param.add(new BasicNameValuePair("_device", fc.device));
+        param.add(new BasicNameValuePair("_os", fc.os));
+        param.add(new BasicNameValuePair("_app", fc.app));
+        param.add(new BasicNameValuePair("_accounts", fc.accounts));
+        param.add(new BasicNameValuePair("_publish_date", fc.publishDate));
+        param.add(new BasicNameValuePair("_comment", fc.comment));
+
+        HttpRequest.post(BASE_URL + "api_add_feedback.php", param, HTTP.UTF_8);
     }
 }
