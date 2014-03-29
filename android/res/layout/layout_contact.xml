@@ -5,242 +5,254 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ScrollView
-            android:id="@+id/svContact"
+    <com.rarnu.devlib.component.PullDownLayout
+            android:id="@+id/pdl"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:orientation="vertical">
 
-        <RelativeLayout
+        <com.rarnu.devlib.component.PullDownScrollView
+                android:id="@+id/svContact"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dip">
-            <TextView
-                    android:id="@+id/tvHeadMail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/contact_mail"/>
-            <RelativeLayout
-                    android:layout_marginLeft="4dip"
-                    android:layout_marginRight="4dip"
-                    android:id="@+id/layMail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/lightyellow"
-                    android:layout_below="@+id/tvHeadMail">
-
-                <TextView
-                        android:id="@+id/tvMailWork"
-                        android:layout_width="120dip"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contact_mail_work"
-                        android:padding="4dip"
-
-                        />
-
-                <TextView
-                        android:id="@+id/vMailWork"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        android:layout_toRightOf="@+id/tvMailWork"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
-
-                <TextView
-                        android:id="@+id/tvMailPrivate"
-                        android:layout_width="120dip"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contact_mail_private"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvMailWork"
-                        />
-
-                <TextView
-                        android:id="@+id/vMailPrivate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvMailWork"
-                        android:layout_toRightOf="@+id/tvMailPrivate"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
-
-            </RelativeLayout>
-
-            <TextView
-                    android:id="@+id/tvHeadOnline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layMail"
-                    android:layout_marginTop="8dip"
-                    android:text="@string/contact_online"/>
+                android:layout_height="match_parent"
+                android:focusable="true">
 
             <RelativeLayout
-                    android:layout_marginLeft="4dip"
-                    android:layout_marginRight="4dip"
-                    android:id="@+id/layOnline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/lightyellow"
-                    android:layout_below="@+id/tvHeadOnline">
+                    android:padding="8dip">
 
                 <TextView
-                        android:id="@+id/tvQQ"
-                        android:layout_width="120dip"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contact_qq"
-                        android:padding="4dip"
-
-                        />
-
-                <TextView
-                        android:id="@+id/vQQ"
+                        android:id="@+id/tvHeadMail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        android:layout_toRightOf="@+id/tvQQ"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
+                        android:text="@string/contact_mail" />
 
-                <TextView
-                        android:id="@+id/tvHangouts"
-                        android:layout_width="120dip"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contact_hangouts"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvQQ"
-                        />
-
-                <TextView
-                        android:id="@+id/vHangouts"
+                <RelativeLayout
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:id="@+id/layMail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvQQ"
-                        android:layout_toRightOf="@+id/tvHangouts"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
+                        android:background="@color/lightyellow"
+                        android:layout_below="@+id/tvHeadMail">
+
+                    <TextView
+                            android:id="@+id/tvMailWork"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_mail_work"
+                            android:padding="4dip"
+
+                            />
+
+                    <TextView
+                            android:id="@+id/vMailWork"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            android:layout_toRightOf="@+id/tvMailWork"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                    <TextView
+                            android:id="@+id/tvMailPrivate"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_mail_private"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvMailWork"
+                            />
+
+                    <TextView
+                            android:id="@+id/vMailPrivate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvMailWork"
+                            android:layout_toRightOf="@+id/tvMailPrivate"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                </RelativeLayout>
 
                 <TextView
-                        android:id="@+id/tvWX"
-                        android:layout_width="120dip"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contact_wx"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvHangouts"
-                        />
-
-                <TextView
-                        android:id="@+id/vWX"
+                        android:id="@+id/tvHeadOnline"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvHangouts"
-                        android:layout_toRightOf="@+id/tvWX"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
+                        android:layout_below="@+id/layMail"
+                        android:layout_marginTop="8dip"
+                        android:text="@string/contact_online" />
+
+                <RelativeLayout
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:id="@+id/layOnline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightyellow"
+                        android:layout_below="@+id/tvHeadOnline">
+
+                    <TextView
+                            android:id="@+id/tvQQ"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_qq"
+                            android:padding="4dip"
+
+                            />
+
+                    <TextView
+                            android:id="@+id/vQQ"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            android:layout_toRightOf="@+id/tvQQ"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                    <TextView
+                            android:id="@+id/tvHangouts"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_hangouts"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvQQ"
+                            />
+
+                    <TextView
+                            android:id="@+id/vHangouts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvQQ"
+                            android:layout_toRightOf="@+id/tvHangouts"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                    <TextView
+                            android:id="@+id/tvWX"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_wx"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvHangouts"
+                            />
+
+                    <TextView
+                            android:id="@+id/vWX"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvHangouts"
+                            android:layout_toRightOf="@+id/tvWX"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                </RelativeLayout>
+
+                <TextView
+                        android:id="@+id/tvHeadPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layOnline"
+                        android:layout_marginTop="8dip"
+                        android:text="@string/contact_phone" />
+
+                <RelativeLayout
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:id="@+id/layPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightyellow"
+                        android:layout_below="@+id/tvHeadPhone">
+
+                    <TextView
+                            android:id="@+id/tvPhoneWork"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_phone_work"
+                            android:padding="4dip"
+
+                            />
+
+                    <TextView
+                            android:id="@+id/vPhoneWork"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            android:layout_toRightOf="@+id/tvPhoneWork"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                    <TextView
+                            android:id="@+id/tvPhonePrivate"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_phone_private"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvPhoneWork"
+                            />
+
+                    <TextView
+                            android:id="@+id/vPhonePrivate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            android:layout_below="@+id/tvPhoneWork"
+                            android:layout_toRightOf="@+id/tvPhonePrivate"
+                            android:singleLine="true"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                </RelativeLayout>
+
+                <TextView
+                        android:id="@+id/tvHeadOffice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layPhone"
+                        android:layout_marginTop="8dip"
+                        android:text="@string/contact_office" />
+
+                <RelativeLayout
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:id="@+id/layOffice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightyellow"
+                        android:layout_below="@+id/tvHeadOffice">
+
+                    <TextView
+                            android:id="@+id/vAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dip"
+                            />
+
+                    <ImageView
+                            android:id="@+id/ivMap"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dip"
+                            android:contentDescription="@null"
+                            android:scaleType="fitXY"
+                            android:layout_below="@+id/vAddress" />
+
+                </RelativeLayout>
 
             </RelativeLayout>
+        </com.rarnu.devlib.component.PullDownScrollView>
 
-            <TextView
-                    android:id="@+id/tvHeadPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layOnline"
-                    android:layout_marginTop="8dip"
-                    android:text="@string/contact_phone"/>
-
-            <RelativeLayout
-                    android:layout_marginLeft="4dip"
-                    android:layout_marginRight="4dip"
-                    android:id="@+id/layPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/lightyellow"
-                    android:layout_below="@+id/tvHeadPhone">
-
-                <TextView
-                        android:id="@+id/tvPhoneWork"
-                        android:layout_width="120dip"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contact_phone_work"
-                        android:padding="4dip"
-
-                        />
-
-                <TextView
-                        android:id="@+id/vPhoneWork"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        android:layout_toRightOf="@+id/tvPhoneWork"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
-
-                <TextView
-                        android:id="@+id/tvPhonePrivate"
-                        android:layout_width="120dip"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contact_phone_private"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvPhoneWork"
-                        />
-
-                <TextView
-                        android:id="@+id/vPhonePrivate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        android:layout_below="@+id/tvPhoneWork"
-                        android:layout_toRightOf="@+id/tvPhonePrivate"
-                        android:singleLine="true"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
-
-            </RelativeLayout>
-
-            <TextView
-                    android:id="@+id/tvHeadOffice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layPhone"
-                    android:layout_marginTop="8dip"
-                    android:text="@string/contact_office"/>
-
-            <RelativeLayout
-                    android:layout_marginLeft="4dip"
-                    android:layout_marginRight="4dip"
-                    android:id="@+id/layOffice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/lightyellow"
-                    android:layout_below="@+id/tvHeadOffice">
-
-                <TextView
-                        android:id="@+id/vAddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="4dip"
-                        />
-
-                <ImageView
-                        android:id="@+id/ivMap"
-                        android:layout_width="match_parent"
-                        android:layout_height="300dip"
-                        android:contentDescription="@null"
-                        android:scaleType="fitXY"
-                        android:layout_below="@+id/vAddress"/>
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-    </ScrollView>
+    </com.rarnu.devlib.component.PullDownLayout>
 
     <TextView
             android:id="@+id/tvNoConnection"
@@ -249,7 +261,7 @@
             android:gravity="center"
             android:text="@string/hint_no_connection"
             android:textSize="16sp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     <RelativeLayout
             android:id="@+id/pbLoading"
@@ -262,12 +274,14 @@
             android:paddingLeft="32dip"
             android:paddingRight="32dip"
             android:visibility="gone">
+
         <ProgressBar
                 android:id="@+id/pb"
                 android:layout_width="48dip"
                 android:layout_height="48dip"
                 style="@android:style/Widget.Holo.Light.ProgressBar.Large"
                 />
+
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="48dip"
@@ -275,7 +289,7 @@
                 android:gravity="center"
                 android:layout_marginLeft="8dip"
                 android:layout_toRightOf="@+id/pb"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
     </RelativeLayout>
 
 </RelativeLayout>

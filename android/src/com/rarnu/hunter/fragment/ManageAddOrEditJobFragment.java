@@ -25,7 +25,6 @@ import java.util.Calendar;
 
 public class ManageAddOrEditJobFragment extends BaseFragment implements Loader.OnLoadCompleteListener<JobDetailClass>, View.OnClickListener {
 
-
     EditText vCompanyName;
     Button vCompanyDesc;
     String strCompanyDesc;

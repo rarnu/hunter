@@ -2,14 +2,14 @@ package com.rarnu.hunter.fragment;
 
 import android.content.Loader;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import com.rarnu.devlib.base.BaseFragment;
+import com.rarnu.devlib.component.PullDownLayout;
+import com.rarnu.devlib.component.PullDownScrollView;
 import com.rarnu.hunter.R;
 import com.rarnu.hunter.api.DataClass;
 import com.rarnu.hunter.api.MobileApi;
@@ -19,9 +19,10 @@ import com.rarnu.utils.DownloadUtils;
 import com.rarnu.utils.ResourceUtils;
 import com.rarnu.utils.UIUtils;
 
-public class ContactFragment extends BaseFragment implements Loader.OnLoadCompleteListener<DataClass>, View.OnClickListener {
+public class ContactFragment extends BaseFragment implements Loader.OnLoadCompleteListener<DataClass>, View.OnClickListener, PullDownLayout.RefreshListener {
 
-    ScrollView svContact;
+    PullDownLayout pdl;
+    PullDownScrollView svContact;
     TextView tvNoConnection;
     RelativeLayout pbLoading;
 
@@ -71,15 +72,18 @@ public class ContactFragment extends BaseFragment implements Loader.OnLoadComple
         ivMap = (ImageView) innerView.findViewById(R.id.ivMap);
 
         tvNoConnection = (TextView) innerView.findViewById(R.id.tvNoConnection);
-        svContact = (ScrollView) innerView.findViewById(R.id.svContact);
+        pdl = (PullDownLayout) innerView.findViewById(R.id.pdl);
+        svContact = (PullDownScrollView) innerView.findViewById(R.id.svContact);
         pbLoading = (RelativeLayout) innerView.findViewById(R.id.pbLoading);
         loader = new DataLoader(getActivity());
+        pdl.sv = svContact;
     }
 
     @Override
     public void initEvents() {
         loader.registerListener(0, this);
         tvNoConnection.setOnClickListener(this);
+        pdl.setRefreshListener(this);
     }
 
     @Override
@@ -122,6 +126,13 @@ public class ContactFragment extends BaseFragment implements Loader.OnLoadComple
     @Override
     public void onLoadComplete(Loader<DataClass> loader, DataClass data) {
         if (getActivity() != null) {
+            pdl.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    pdl.finishRefresh();
+                }
+            }, 500);
+
             pbLoading.setVisibility(View.GONE);
             if (data != null) {
 
@@ -162,5 +173,10 @@ public class ContactFragment extends BaseFragment implements Loader.OnLoadComple
         ivMap.setLayoutParams(rllp);
         DownloadUtils.downloadFileT(getActivity(), ivMap, MobileApi.MAP_URL, LocalDir.LOCALDIR, "map.png", null);
 
+    }
+
+    @Override
+    public void onRefresh() {
+        loader.startLoading();
     }
 }

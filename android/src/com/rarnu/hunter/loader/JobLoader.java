@@ -37,6 +37,8 @@ public class JobLoader extends BaseLoader<JobClass> {
             list = MobileApi.queryJob(_page);
             if (_page == 1 && list != null && list.size() != 0) {
                 FileUtils.saveListToFile(list, LocalDir.LOCALDIR + "_job");
+            } else if (_page == 1 && (list == null || list.size() == 0)) {
+                list = (List<JobClass>) FileUtils.loadListFromFile(LocalDir.LOCALDIR + "_job");
             }
         }
         return list;

@@ -7,10 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import com.rarnu.devlib.base.BaseFragment;
+import com.rarnu.devlib.component.PullDownLayout;
+import com.rarnu.devlib.component.PullDownScrollView;
 import com.rarnu.hunter.R;
 import com.rarnu.hunter.api.JobClass;
 import com.rarnu.hunter.api.JobDetailClass;
@@ -18,8 +19,7 @@ import com.rarnu.hunter.api.MobileApi;
 import com.rarnu.hunter.common.Ids;
 import com.rarnu.hunter.loader.JobDetailLoader;
 
-public class JobDetailFragment extends BaseFragment implements Loader.OnLoadCompleteListener<JobDetailClass>, View.OnClickListener {
-
+public class JobDetailFragment extends BaseFragment implements Loader.OnLoadCompleteListener<JobDetailClass>, View.OnClickListener, PullDownLayout.RefreshListener {
 
     TextView vCompanyName;
     TextView vCompanyDesc;
@@ -36,7 +36,8 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
     TextView vJobRequirement;
 
     JobDetailLoader loader;
-    ScrollView svDetail;
+    PullDownLayout pdl;
+    PullDownScrollView svDetail;
 
     TextView tvNoConnection;
     RelativeLayout pbLoading;
@@ -77,16 +78,18 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
         vJobRequirement = (TextView) innerView.findViewById(R.id.vJobRequirement);
 
         tvNoConnection = (TextView) innerView.findViewById(R.id.tvNoConnection);
-        svDetail = (ScrollView) innerView.findViewById(R.id.svDetail);
+        pdl = (PullDownLayout) innerView.findViewById(R.id.pdl);
+        svDetail = (PullDownScrollView) innerView.findViewById(R.id.svDetail);
         pbLoading = (RelativeLayout) innerView.findViewById(R.id.pbLoading);
         loader = new JobDetailLoader(getActivity());
-
+        pdl.sv = svDetail;
     }
 
     @Override
     public void initEvents() {
         loader.registerListener(0, this);
         tvNoConnection.setOnClickListener(this);
+        pdl.setRefreshListener(this);
     }
 
     @Override
@@ -154,6 +157,13 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
     @Override
     public void onLoadComplete(Loader<JobDetailClass> loader, JobDetailClass data) {
         if (getActivity() != null) {
+            pdl.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    pdl.finishRefresh();
+                }
+            }, 500);
+
             pbLoading.setVisibility(View.GONE);
             if (data != null) {
                 if (data.companyDesc.equals("")) {
@@ -189,7 +199,6 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
             }
         }
     }
-
 
     private String companyHeadsToString(int heads) {
         String chstr = "保密";
@@ -269,5 +278,10 @@ public class JobDetailFragment extends BaseFragment implements Loader.OnLoadComp
                 doLoading();
                 break;
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        loader.startLoading();
     }
 }
